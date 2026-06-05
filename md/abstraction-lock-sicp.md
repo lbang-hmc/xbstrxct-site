@@ -1,3 +1,8 @@
+---
+title: Locke, Abstraction, and the Programmer’s Toolbox
+date: 2025-04-01
+---
+
 # Locke, Abstraction, and the Programmer’s Toolbox  
 
 Chapter 1 of the widely adopted *Structure and Interpretation of Computer Programs* by Abelson, Sussman, and Sussman opens with a passage from John Locke’s 1689 *Essay Concerning Human Understanding*[^1], highlighting three fundamental acts of the mind: **combining** ideas to form more complex ones, identifying **relations** between them, and **abstraction**, the act of separating ideas from their particular context to form general concepts:

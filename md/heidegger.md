@@ -1,3 +1,8 @@
+---
+title: Heidegger and Software
+date: 2025-01-15
+---
+
 # Heidegger and software 
 
 ## When Technology Disappears  

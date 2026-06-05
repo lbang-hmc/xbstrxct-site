@@ -1,6 +1,8 @@
 # Simple Pandoc blog builder
 # Add new posts to POSTS; index is handled separately at the root
 
+SITE_URL = https://xbstrxct.com
+
 POSTS = heidegger \
 simondon \
 formal-methods-ancient-greece \
@@ -12,7 +14,7 @@ POST_OUTPUTS = $(addprefix posts/, $(addsuffix .html, $(POSTS)))
 
 .PHONY: all clean
 
-all: index.html $(POST_OUTPUTS) posts/style.css
+all: index.html $(POST_OUTPUTS) posts/style.css feed.xml
 
 index.html: md/index.md templates/page.html
 	pandoc -s $< \
@@ -31,5 +33,20 @@ posts/%.html: md/%.md templates/page.html
 posts/style.css: style.css
 	cp style.css posts/
 
+feed.xml: $(addprefix md/, $(addsuffix .md, $(POSTS))) templates/item.xml
+	{ \
+	  printf '<?xml version="1.0" encoding="UTF-8"?>\n'; \
+	  printf '<rss version="2.0"><channel>\n'; \
+	  printf '<title>XBSTRXCT</title>\n'; \
+	  printf '<link>$(SITE_URL)</link>\n'; \
+	  for slug in $(POSTS); do \
+	    pandoc -s md/$$slug.md \
+	      --template=templates/item.xml \
+	      --variable=slug:$$slug \
+	      --variable=site_url:$(SITE_URL); \
+	  done; \
+	  printf '</channel></rss>\n'; \
+	} > $@
+
 clean:
-	rm -f index.html posts/*.html
+	rm -f index.html posts/*.html feed.xml

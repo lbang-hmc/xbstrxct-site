@@ -1,3 +1,8 @@
+---
+title: Formal Methods in Ancient Greece
+date: 2025-02-15
+---
+
 # Formal Methods in Ancient Greece  
 
 ## From the Concrete to the Abstract  

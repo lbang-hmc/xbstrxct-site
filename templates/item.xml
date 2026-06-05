@@ -1,0 +1,6 @@
+<item>
+  <title>$title$</title>
+  <link>$site_url$/posts/$slug$.html</link>
+  <pubDate>$date$</pubDate>
+  <guid>$site_url$/posts/$slug$.html</guid>
+</item>

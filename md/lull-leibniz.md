@@ -1,3 +1,8 @@
+---
+title: Early Mechanical Reasoning and the Dream of Universal Calculation
+date: 2025-03-15
+---
+
 # Early Mechanical Reasoning and the Dream of Universal Calculation  
 
 Thirteenth century theologian Raymond Llull wrote forty treatises on a novel approach to discovering universal truths, collected in his *Ars magna*[^1]. The work serves as a user's manual for a device containing concentric rotating wheels inscribed with letters meant to represent what he believed were the fundamental axioms of truth: God, justice, goodness, eternity, and so on. By turning the wheels, one could explore combinations of these principles and arrive at new metaphysical insights. Llull’s *Ars magna* stands as one of the earliest documented attempts to apply formal and mechanical reasoning to problems that had previously belonged to philosophy, theology, and human judgment.

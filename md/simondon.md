@@ -1,3 +1,8 @@
+---
+title: What Might Simondon Think About Software And Programming?
+date: 2025-02-01
+---
+
 # What Might Simondon Think About Software And Programming?
 
 ## Simondon on opacity and ubiquity of technology

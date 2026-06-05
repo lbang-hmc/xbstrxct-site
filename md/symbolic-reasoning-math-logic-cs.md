@@ -1,3 +1,8 @@
+---
+title: Meaningless Symbols in Twentieth Century Symbolic Reasoning
+date: 2025-03-01
+---
+
 # Meaningless Symbols in Twentieth Century Symbolic Reasoning  
 
 ## Hilbert, Gödel, and the Rise of Formalism  
