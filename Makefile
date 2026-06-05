@@ -1,31 +1,35 @@
 # Simple Pandoc blog builder
-# Add new pages by adding them to the PAGES variable below
+# Add new posts to POSTS; index is handled separately at the root
 
-PAGES = index \
-heidegger \
+POSTS = heidegger \
 simondon \
 formal-methods-ancient-greece \
 symbolic-reasoning-math-logic-cs \
 lull-leibniz \
 abstraction-lock-sicp
 
-
-SOURCES = $(addprefix md/, $(addsuffix .md, $(PAGES)))
-OUTPUTS = $(addprefix public/, $(addsuffix .html, $(PAGES)))
+POST_OUTPUTS = $(addprefix posts/, $(addsuffix .html, $(POSTS)))
 
 .PHONY: all clean
 
-all: $(OUTPUTS) public/style.css
+all: index.html $(POST_OUTPUTS) posts/style.css
 
-public/%.html: md/%.md templates/page.html
+index.html: md/index.md templates/page.html
+	pandoc -s $< \
+		--template=templates/page.html \
+		-o $@.tmp
+	sed -E 's/href="([^".:#\/]+)"/href="posts\/\1.html"/g' $@.tmp > $@
+	rm $@.tmp
+
+posts/%.html: md/%.md templates/page.html
 	pandoc -s $< \
 		--template=templates/page.html \
 		-o $@.tmp
 	sed -E 's/href="([^".:#\/]+)"/href="\1.html"/g' $@.tmp > $@
 	rm $@.tmp
 
-public/style.css: style.css
-	cp style.css public/
+posts/style.css: style.css
+	cp style.css posts/
 
 clean:
-	rm -rf public/*.html
+	rm -f index.html posts/*.html
