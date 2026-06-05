@@ -20,3 +20,4 @@ Origin: from Latin *abstractio*, from the verb *abstrahere* ('draw away')
 
 ---
 
+[RSS](https://xbstrxct.com/feed.xml)
