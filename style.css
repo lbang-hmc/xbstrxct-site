@@ -1,0 +1,59 @@
+:root {
+  color-scheme: light dark;
+  font-family: system-ui, sans-serif;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: auto;
+  padding: 1rem;
+  background-color: canvas;
+  color: canvastext;
+}
+
+h1, h2, h3 {
+  line-height: 1.2;
+  margin-top: 2rem;
+}
+
+a {
+  color: dodgerblue;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1em auto;
+}
+
+pre, code {
+  font-family: monospace;
+  background: color-mix(in srgb, currentColor 10%, transparent);
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+}
+
+body {
+  margin: 0;
+}
+
+header {
+  margin-bottom: 2rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid color-mix(in srgb, currentColor 20%, transparent);
+}
+
+header a {
+  font-weight: bold;
+  font-size: 1.2rem;
+  letter-spacing: 0.05em;
+}
+
+footer {
+  margin-top: 3rem;
+  font-size: 0.9rem;
+  opacity: 0.7;
+}

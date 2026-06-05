@@ -1,0 +1,10 @@
+#!/bin/bash
+
+input="$1"
+output="${input%.md}.html"
+
+pandoc -s "$input" \
+  -c style.css \
+  --include-in-header=meta.html \
+  --metadata title="XBSTRXT" \
+  -o "$output"
