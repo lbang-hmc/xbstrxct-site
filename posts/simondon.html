@@ -89,8 +89,12 @@ href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </section>
   </main>
   <footer>
-    <p><span id="y"></span> XBSTRXCT</p>
-    <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+    <p><span id="y"></span> XBSTRXCT &mdash; <a href="/feed.xml">RSS</a></p>
+    <p>For comments or conversation: <span id="contact"></span></p>
+    <script>
+      document.getElementById('y').textContent=new Date().getFullYear();
+      (function(){var u='xbstrxct',d='proton.me',a=document.createElement('a');a.href='mailto:'+u+'@'+d;a.textContent=u+'@'+d;document.getElementById('contact').appendChild(a);})();
+    </script>
   </footer>
 </body>
 </html>

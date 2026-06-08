@@ -17,7 +17,3 @@ Origin: from Latin *abstractio*, from the verb *abstrahere* ('draw away')
 - [Formal Methods in Ancient Greece](formal-methods-ancient-greece)
 - [What Might Simondon Think About Software And Programming?](simondon)
 - [Heidegger and software](heidegger)
-
----
-
-[RSS](https://xbstrxct.com/feed.xml)

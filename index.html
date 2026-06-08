@@ -45,12 +45,14 @@ Greece</a></li>
 Programming?</a></li>
 <li><a href="posts/heidegger.html">Heidegger and software</a></li>
 </ul>
-<hr />
-<p><a href="https://xbstrxct.com/feed.xml">RSS</a></p>
   </main>
   <footer>
-    <p><span id="y"></span> XBSTRXCT</p>
-    <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+    <p><span id="y"></span> XBSTRXCT &mdash; <a href="/feed.xml">RSS</a></p>
+    <p>For comments or conversation: <span id="contact"></span></p>
+    <script>
+      document.getElementById('y').textContent=new Date().getFullYear();
+      (function(){var u='xbstrxct',d='proton.me',a=document.createElement('a');a.href='mailto:'+u+'@'+d;a.textContent=u+'@'+d;document.getElementById('contact').appendChild(a);})();
+    </script>
   </footer>
 </body>
 </html>
