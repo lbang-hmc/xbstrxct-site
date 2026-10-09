@@ -11,3 +11,6 @@ private/
 replit.nix
 .quartz/
 quartz/cli/tui/dist/
+
+# copyrighted scans kept locally, never published
+research/*.pdf
