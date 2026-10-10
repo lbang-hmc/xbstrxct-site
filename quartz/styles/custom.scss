@@ -4,7 +4,7 @@
 // abstraction.wiki design layer. Colours and the serif/mono fonts are set in quartz.config.yaml;
 // everything here only refines Quartz's base styles, so upstream updates stay mergeable.
 
-// Fonts (quartz.config.yaml): body = Source Serif 4 (text and article headings),
+// Fonts (quartz.config.yaml): body = Literata (text and article headings),
 // header = Source Sans 3 (navigation, metadata, Quartz UI), code = Source Code Pro.
 :root {
   --uiFont: var(--headerFont), system-ui, sans-serif;
@@ -257,7 +257,7 @@ section[data-footnotes],
   }
 }
 
-// ---------- Sidebars: explorer, table of contents, backlinks, graph ----------
+// ---------- Sidebars: explorer, table of contents, backlinks ----------
 
 // Long titles wrap with a hanging indent and items get clear separation,
 // so a two-line title never reads as two separate entries.
@@ -293,8 +293,7 @@ section[data-footnotes],
 
 .explorer .title-button h2,
 .backlinks > h3,
-.toc .toc-header h3,
-.graph > h3 {
+.toc .toc-header h3 {
   font-family: var(--uiFont);
   font-size: 0.78rem;
   font-weight: 600;

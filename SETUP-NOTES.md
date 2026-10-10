@@ -67,9 +67,9 @@ from Jamison, *Signs for Computing Terminology*. The PDFs are git-ignored to avo
 
 All customisation lives in four places:
 
-- `quartz.config.yaml`: fonts (`title`/`body` Source Serif 4, `header` Source Sans 3 for UI, `code` Source Code Pro),
+- `quartz.config.yaml`: fonts (`title`/`body` Literata, chosen over Source Serif 4, Newsreader, EB Garamond and Crimson Pro; `header` Source Sans 3 for UI, `code` Source Code Pro),
   paper/charcoal palette with ink-blue links for light and dark mode, and plugin placement: table of contents on the right
-  (only when a page has headings), graph below backlinks, tag-list on (tags shown under the date), the properties table hidden,
+  (only when a page has headings), tag-list on (tags shown under the date), the properties table hidden,
   reader mode off, breadcrumbs off (redundant with the nav row). Links are oxblood (`#7d2a1e`; `#d88f7b` in dark mode).
 - `quartz/styles/custom.scss`: the design layer (reading column ~40rem, type scale, quiet underlined links, quotations,
   footnotes, sidebars, per-folder page types, homepage).
@@ -92,18 +92,5 @@ Homepage restructuring (text unchanged): title `abstraction.wiki`; the "What is 
 paragraph (heading removed); the dictionary entry has an `## Abstraction` heading (formerly the page's H1); a Concepts list and a
 tags link were added.
 
-### Graph: vendored plugin with a small patch (`plugins/graph/`)
-
-The upstream graph plugin (quartz-community/graph @ `701bda4`) has no options for these, so a copy lives in
-`plugins/graph/` and is referenced as `source: ./plugins/graph` (Quartz symlinks it into `.quartz/plugins/graph`).
-Changes, each marked `abstraction.wiki patch`:
-
-- `src/components/Graph.tsx`: pages with a `shortTitle` frontmatter field pass it to the graph as their label.
-- `src/components/scripts/graph.inline.ts`: folder pages (`essays/index`, `concepts/index`) are left out of the graph, and
-  labels use `shortTitle` when present. Titles elsewhere (search, lists, page headings) are unaffected.
-
-`dist/` is committed because Quartz loads the built output. After editing the source: `cd plugins/graph && npm ci && npm run build`
-(the "DTS build error" about `vitest/globals` also happens upstream; the JavaScript build succeeds). Upgrading: diff against
-upstream and re-apply the two marked patches. Note `quartz.lock.json` records this plugin's absolute local path.
-
-`shortTitle` values on the essays are proposals awaiting the author's approval.
+The graph is disabled (author's choice, Phase 2). An earlier patched copy that supported `shortTitle` graph labels
+and hid folder nodes is in git history (commit `6d72898`) if the graph returns.

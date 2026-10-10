@@ -16,11 +16,11 @@ configuration:
     fontOrigin: googleFonts
     cdnCaching: true
     typography:
-      title: Source Serif 4
+      title: Literata
       header:
         name: Source Sans 3
         weights: [400, 600]
-      body: Source Serif 4
+      body: Literata
       code: Source Code Pro
     colors:
       lightMode:
@@ -139,8 +139,8 @@ plugins:
     layout:
       position: left
       priority: 50
-  - source: ./plugins/graph
-    enabled: true
+  - source: github:quartz-community/graph
+    enabled: false
     layout:
       position: right
       priority: 40

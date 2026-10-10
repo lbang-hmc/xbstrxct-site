@@ -1,6 +1,5 @@
 ---
 title: Meaningless Symbols in Twentieth Century Symbolic Reasoning
-shortTitle: Meaningless Symbols
 date: 2025-03-01
 ---
 

@@ -1,6 +1,5 @@
 ---
 title: Formal Methods in Ancient Greece
-shortTitle: Formal Methods in Greece
 date: 2025-02-15
 ---
 

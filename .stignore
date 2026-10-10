@@ -2,4 +2,3 @@ node_modules
 .quartz
 .quartz-cache
 public
-plugins/graph/node_modules
