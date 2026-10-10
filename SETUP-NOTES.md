@@ -56,9 +56,9 @@ Transformations applied to `content/`:
 2. `content/index.md`: the original H1 `# Abstraction` became `title: Abstraction`; the snapshot's
    "What is this site?" section is inserted before "Thoughts", with "XBSTRXCT" replaced by "abstraction.wiki"
    (at the author's request); list links `(slug)` became `(essays/slug)`.
+3. Essay-to-essay links such as `[…](simondon)` are unchanged; they resolve via `markdownLinkResolution: shortest`.
 4. `content/concepts/*.md`: six placeholder pages created at the author's request (no prose, no dates),
    tagged `placeholder`, `type: concept`; each links only to the essays where the term actually occurs.
-3. Essay-to-essay links such as `[…](simondon)` are unchanged; they resolve via `markdownLinkResolution: shortest`.
 
 Unpublished research notes (outside `content/`, never built): `research/todo.md` and two scanned PDFs
 from Jamison, *Signs for Computing Terminology*. The PDFs are git-ignored to avoid accidental publication.
