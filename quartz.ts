@@ -15,6 +15,12 @@ import TagIndex from "./quartz/components/abstraction/TagIndex"
 const config = await loadQuartzConfig()
 export default config
 
+// Pages with `draft: true` are never published. `./serve --drafts` sets ABSTRACTION_DRAFTS=1 to
+// include them in the local preview (they are labelled "Draft").
+if (process.env.ABSTRACTION_DRAFTS === "1") {
+  config.plugins.filters = config.plugins.filters.filter((f) => f.name !== "RemoveDrafts")
+}
+
 // Dates come only from frontmatter. Runs after the stock date plugins and overrides their result.
 config.plugins.transformers.push(AuthoredDates())
 

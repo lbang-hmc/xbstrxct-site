@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # Live preview of abstraction.wiki at http://localhost:8080 (Ctrl+C to stop).
-# Extra arguments are passed to `quartz build`, e.g. `./serve --port 8081`.
+# `./serve --drafts` also shows pages marked `draft: true` (never part of the published site).
+# Other arguments are passed to `quartz build`, e.g. `./serve --port 8081`.
 set -euo pipefail
 cd "$(dirname "$0")"
 
@@ -20,4 +21,9 @@ fi
 [ -d node_modules ] || npm ci
 [ -d .quartz/plugins ] || npx quartz plugin install
 
-exec npx quartz build --serve "$@"
+args=()
+for a in "$@"; do
+  if [ "$a" = "--drafts" ]; then export ABSTRACTION_DRAFTS=1; else args+=("$a"); fi
+done
+[ "${ABSTRACTION_DRAFTS:-}" = 1 ] && echo "Including draft pages (not part of the published site)."
+exec npx quartz build --serve "${args[@]}"

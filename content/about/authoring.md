@@ -1,5 +1,6 @@
 ---
 title: Authoring conventions
+draft: true
 description: A working example of every convention used on abstraction.wiki.
 aliases:
   - Writing conventions

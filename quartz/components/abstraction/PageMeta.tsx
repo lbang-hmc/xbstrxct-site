@@ -23,6 +23,8 @@ export default (() => {
     const { published, modified } = fileData.authoredDates ?? {}
 
     const parts = []
+    const draft = fileData.frontmatter?.draft
+    if (draft === true || draft === "true") parts.push(<span class="page-meta-draft">Draft</span>)
     if (published) {
       parts.push(
         <span>

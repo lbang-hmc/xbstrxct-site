@@ -120,3 +120,17 @@ Upstream issues worked around:
 - BibTeX parser: no `@` inside `@comment`, no bare `%` lines, and `{{Braces and Ampersands}}` for publishers containing "and".
 
 `content/about/authoring.md` is the working example of every convention.
+
+### Phase 3 follow-up (author feedback)
+
+- **Essays now cite via `bibliography.bib`.** Every original footnote was a source reference; each `[^n]` became a
+  Pandoc citation (`[@key]`, or `[-@key]` "year only" where the sentence already names the author) and the footnote
+  definitions were removed. Prose is otherwise unchanged; originals remain in `sources/xbstrxct-site-md/`.
+  Entries transcribed from footnotes are marked `keywords = {incomplete}` in the .bib for later completion.
+  This also removed a stray "2017." in the Simondon essay: its multi-line footnote ended with a line `2017.`,
+  which Markdown parses as an empty ordered-list item numbered 2017.
+- **Concept-link trial:** the first mention of each concept term in the essays is now a `[[wiki link]]`
+  (wording unchanged), so concept pages get backlinks from the essays.
+- **Drafts:** `draft: true` keeps a page out of every build. `./serve --drafts` previews drafts locally (labelled
+  "Draft"). `content/about/` (the authoring example) is a draft. Note: the live preview does not delete stale output
+  files; restart `./serve` after drafting a previously published page.

@@ -5,7 +5,7 @@ date: 2025-02-01
 
 ## Simondon on opacity and ubiquity of technology
 
-Gilbert Simondon observed[^1] that technologies tend to become more socially integrated as they grow *less* internally intelligible to their users. As devices evolve, their functions fold into self-regulating, interdependent systems that no longer require interpretive knowledge to operate. This process, that Simondon calls *concretization*, produces machines that work reliably and autonomously while concealing their inner logic. Opacity, rather than hindering adoption, is what allows technologies to become ubiquitous; they turn ordinary once they stop being complicated objects of inquiry and start working quietly in the background. Heidegger [proposed similar interpretations](heidegger) of technology use.
+Gilbert Simondon observed [-@simondon2017mode] that technologies tend to become more socially integrated as they grow *less* internally intelligible to their users. As devices evolve, their functions fold into self-regulating, interdependent systems that no longer require interpretive knowledge to operate. This process, that Simondon calls *[[concretization]]*, produces machines that work reliably and autonomously while concealing their inner logic. Opacity, rather than hindering adoption, is what allows technologies to become ubiquitous; they turn ordinary once they stop being complicated objects of inquiry and start working quietly in the background. Heidegger [proposed similar interpretations](heidegger) of technology use.
 
 ## Applying the idea to programming
 
@@ -24,13 +24,3 @@ Interestingly, there seems to be a conflict of terminology. Simondon names *conc
 ### Related 
 
 - [Heidegger and software](heidegger)
-
-
-[^1]: Gilbert Simondon. 
-*On the Mode of Existence of Technical Objects*. 
-University of Minnesota Press, 
-2017.
-
-
-
-

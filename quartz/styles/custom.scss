@@ -92,6 +92,13 @@ h1.article-title {
   color: var(--gray);
   margin: 0;
 }
+.page-meta-draft {
+  color: var(--secondary);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.75rem;
+}
 .page-meta > span + span::before {
   content: "·";
   margin: 0 0.5em;
