@@ -1,5 +1,6 @@
 ---
 title: Locke, Abstraction, and the Programmer’s Toolbox
+shortTitle: Locke and SICP
 date: 2025-04-01
 ---
 

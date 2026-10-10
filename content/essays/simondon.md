@@ -1,5 +1,6 @@
 ---
 title: What Might Simondon Think About Software And Programming?
+shortTitle: Simondon and Software
 date: 2025-02-01
 ---
 

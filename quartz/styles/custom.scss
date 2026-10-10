@@ -71,26 +71,7 @@ footer {
   opacity: 1;
 }
 
-// ---------- Article header: section kicker, title, date, tags ----------
-
-.breadcrumb-container {
-  font-family: var(--uiFont);
-  font-size: 0.78rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  margin: 0 0 0.6rem 0;
-  gap: 0.1rem;
-  & a {
-    font-weight: 600;
-    color: var(--gray);
-    &:hover {
-      color: var(--secondary);
-    }
-  }
-  & p {
-    color: var(--gray);
-  }
-}
+// ---------- Article header: title, date, tags ----------
 
 h1.article-title {
   font-family: var(--serif);
@@ -346,7 +327,6 @@ body[data-slug^="concepts/"] h1.article-title {
 // ---------- Homepage ----------
 
 body[data-slug="index"] {
-  .breadcrumb-container,
   .toc {
     display: none;
   }

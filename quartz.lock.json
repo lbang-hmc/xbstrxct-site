@@ -140,10 +140,10 @@
       "installedAt": "2026-03-11T18:22:27.866Z"
     },
     "graph": {
-      "source": "github:quartz-community/graph",
-      "resolved": "https://github.com/quartz-community/graph.git",
-      "commit": "701bda442cf08f521e88ec326b12a7559320eef4",
-      "installedAt": "2026-03-12T19:33:34.250Z"
+      "source": "./plugins/graph",
+      "resolved": "/home/bang/Sync/abstraction-demo-wiki-site/plugins/graph",
+      "commit": "local",
+      "installedAt": "2026-10-10T00:36:05.769Z"
     },
     "hard-line-breaks": {
       "source": "github:quartz-community/hard-line-breaks",

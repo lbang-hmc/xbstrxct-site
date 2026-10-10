@@ -17,7 +17,9 @@ configuration:
     cdnCaching: true
     typography:
       title: Source Serif 4
-      header: Source Sans 3
+      header:
+        name: Source Sans 3
+        weights: [400, 600]
       body: Source Serif 4
       code: Source Code Pro
     colors:
@@ -27,9 +29,9 @@ configuration:
         gray: "#a39a8b"
         darkgray: "#2e2b27"
         dark: "#1d1b18"
-        secondary: "#2a5373"
-        tertiary: "#9a5530"
-        highlight: rgba(42, 83, 115, 0.07)
+        secondary: "#7d2a1e"
+        tertiary: "#b04a32"
+        highlight: rgba(125, 42, 30, 0.07)
         textHighlight: "#f2dc8a88"
       darkMode:
         light: "#1a1917"
@@ -37,9 +39,9 @@ configuration:
         gray: "#7a7368"
         darkgray: "#d8d2c6"
         dark: "#eee8dc"
-        secondary: "#94b7d3"
-        tertiary: "#d49c74"
-        highlight: rgba(148, 183, 211, 0.1)
+        secondary: "#d88f7b"
+        tertiary: "#efb4a2"
+        highlight: rgba(216, 143, 123, 0.1)
         textHighlight: "#7d6d2488"
 plugins:
   - source: github:quartz-community/created-modified-date
@@ -137,7 +139,7 @@ plugins:
     layout:
       position: left
       priority: 50
-  - source: github:quartz-community/graph
+  - source: ./plugins/graph
     enabled: true
     layout:
       position: right
@@ -189,7 +191,7 @@ plugins:
       priority: 35
       group: toolbar
   - source: github:quartz-community/breadcrumbs
-    enabled: true
+    enabled: false
     options:
       spacerSymbol: "›"
       showCurrentPage: false

@@ -1,5 +1,6 @@
 ---
 title: Early Mechanical Reasoning and the Dream of Universal Calculation
+shortTitle: Llull and Leibniz
 date: 2025-03-15
 ---
 

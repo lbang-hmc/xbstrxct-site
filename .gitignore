@@ -14,3 +14,6 @@ quartz/cli/tui/dist/
 
 # copyrighted scans kept locally, never published
 research/*.pdf
+
+# design comparison screenshots (regenerable)
+design-previews/
