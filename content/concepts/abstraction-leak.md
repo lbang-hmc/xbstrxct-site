@@ -1,5 +1,7 @@
 ---
 title: Abstraction leak
+aliases:
+  - Leaky abstraction
 tags:
   - placeholder
 ---

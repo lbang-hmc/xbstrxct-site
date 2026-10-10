@@ -1,17 +1,31 @@
 import { loadQuartzConfig, loadQuartzLayout } from "./quartz/plugins/loader/config-loader"
-import { registerCondition } from "./quartz/plugins/loader/conditions"
 import { PageTypeDispatcher } from "./quartz/plugins/pageTypes"
+import { FullPageLayout } from "./quartz/cfg"
+import { QuartzComponent } from "./quartz/components/types"
+import { AuthoredDates } from "./quartz/plugins/abstraction/authoredDates"
+import { ResolveLinks } from "./quartz/plugins/abstraction/resolveLinks"
+import { NormalizeTags } from "./quartz/plugins/abstraction/normalizeTags"
 import SiteNav from "./quartz/components/abstraction/SiteNav"
+import PageMeta from "./quartz/components/abstraction/PageMeta"
+import TagIndex from "./quartz/components/abstraction/TagIndex"
 
-// abstraction.wiki: only show a page's date when its frontmatter actually has one.
-// Without this, created-modified-date fills a missing date with the build time.
-// Keys mirror the aliases note-properties reads for `published`.
-registerCondition("has-published-date", (props) => {
-  const fm = props.fileData.frontmatter as Record<string, unknown> | undefined
-  return ["published", "publishDate", "date"].some((k) => fm?.[k] != null && fm[k] !== "")
-})
+// abstraction.wiki customisations. Everything site-specific that is not plain configuration
+// lives here or in quartz/components/abstraction, quartz/plugins/abstraction, quartz/styles/custom.scss.
 
-// abstraction.wiki: section links in the `header` slot (plugins cannot be placed there from YAML).
+const config = await loadQuartzConfig()
+export default config
+
+// Dates come only from frontmatter. Runs after the stock date plugins and overrides their result.
+config.plugins.transformers.push(AuthoredDates())
+
+// [[Links]] by title, alias or file name in any folder, case-insensitive; flags broken links.
+// Runs after Quartz's own link crawler.
+config.plugins.transformers.push(ResolveLinks())
+
+// Tags are case-insensitive: #Topology and `tags: [topology]` are the same tag.
+config.plugins.transformers.push(NormalizeTags())
+
+// Section links in the `header` slot (plugins cannot be placed there from YAML).
 const header = [
   SiteNav([
     { label: "Essays", path: "essays/" },
@@ -20,17 +34,38 @@ const header = [
   ]),
 ]
 
-const config = await loadQuartzConfig()
-export default config
+// Date and reading-time line, placed directly after the article title.
+const pageMeta = PageMeta()
+function withPageMeta(beforeBody: QuartzComponent[] = []): QuartzComponent[] {
+  const titleIndex = beforeBody.findIndex((c) => c.displayName === "ArticleTitle" || c.name === "ArticleTitle")
+  const at = titleIndex === -1 ? 0 : titleIndex + 1
+  return [...beforeBody.slice(0, at), pageMeta, ...beforeBody.slice(at)]
+}
+
+const base = await loadQuartzLayout()
+const contentOverrides: Partial<FullPageLayout> = {
+  header,
+  beforeBody: withPageMeta(base.byPageType.content?.beforeBody ?? base.defaults.beforeBody),
+}
+// Compact tag index on /tags/ (renders nothing on individual tag pages).
+const tagOverrides: Partial<FullPageLayout> = {
+  header,
+  beforeBody: [...(base.byPageType.tag?.beforeBody ?? base.defaults.beforeBody ?? []), TagIndex()],
+}
+
 export const layout = await loadQuartzLayout({
   defaults: { header },
-  byPageType: Object.fromEntries(
-    ["content", "folder", "tag", "canvas", "bases"].map((pageType) => [pageType, { header }]),
-  ),
+  byPageType: {
+    content: contentOverrides,
+    tag: tagOverrides,
+    ...Object.fromEntries(["folder", "canvas", "bases"].map((t) => [t, { header }])),
+  },
 })
 
 // Quartz v5.0.0 renders pages with a PageTypeDispatcher built inside loadQuartzConfig() from the
 // un-overridden layout, and does not read the `layout` export above. Swap in one built from ours.
 const dispatcherIndex = config.plugins.emitters.findIndex((e) => e.name === "PageTypeDispatcher")
-if (dispatcherIndex === -1) throw new Error("quartz.ts: PageTypeDispatcher not found; revisit after upgrading Quartz")
+if (dispatcherIndex === -1) {
+  throw new Error("quartz.ts: PageTypeDispatcher not found; revisit after upgrading Quartz")
+}
 config.plugins.emitters[dispatcherIndex] = PageTypeDispatcher(layout)

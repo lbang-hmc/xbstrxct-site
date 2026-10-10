@@ -33,11 +33,7 @@ How this was created: `git checkout v5.0.0 -- .`, `npm ci`,
 - `defaultDateType: published`: in this version the frontmatter key `date` is read as both
   `created` and `published` (note-properties plugin), while `modified` falls back to git/filesystem
   time. Showing `published` displays the authored dates rather than the import date.
-- `content-meta` gets `condition: has-published-date`, a custom layout condition registered in
-  `quartz.ts` via Quartz's `registerCondition()` API. The created-modified-date plugin fills a missing date
-  with the build time, so the date line is shown only when the frontmatter has `published`/`publishDate`/`date`.
-  **Known gap (Phase 3):** folder and tag listings (e.g. `/concepts/`, `/tags/placeholder`) still show the
-  build time for undated pages.
+- (Phase 1 workaround for invented dates, superseded in Phase 3 by `authoredDates.ts`; see below.)
 
 ## Content provenance
 
@@ -94,3 +90,33 @@ tags link were added.
 
 The graph is disabled (author's choice, Phase 2). An earlier patched copy that supported `shortTitle` graph labels
 and hid folder nodes is in git history (commit `6d72898`) if the graph returns.
+
+## Phase 3: knowledge features
+
+Run the checks with `./test` (builds `tests/fixture/` and the real site; 21 checks).
+
+Custom code (all registered in `quartz.ts`):
+
+| File | Purpose |
+|---|---|
+| `quartz/plugins/abstraction/authoredDates.ts` | Dates come only from frontmatter: `published` (alias `date`), `modified` (`updated`, `lastmod`), `created`. Undated pages show no date anywhere; listings sort dated pages newest-first, undated after. |
+| `quartz/components/abstraction/PageMeta.tsx` | "Published … · Revised … · N min read" under the title (replaces content-meta). `created` is recorded, not shown. |
+| `quartz/plugins/abstraction/resolveLinks.ts` | `[[Links]]` resolve case-insensitively by file name, title or alias in any folder; backlinks include them; links to nothing get class `broken` and a build warning. |
+| `quartz/plugins/abstraction/normalizeTags.ts` | Tags are case-insensitive (`#Topology` = `topology`). |
+| `quartz/components/abstraction/TagIndex.tsx` | Compact `/tags/` page: tag, count, page titles; nested tags under parents. |
+
+Configuration: `citations` enabled (`bibliography.bib`, `csl: chicago` author-date, linked citations);
+`crawl-links` `prettyLinks: false` (it shortened any link text containing "/", e.g. nested tags).
+
+Verified behaviour of Quartz v5 itself:
+- Inline `#tags` are parsed by remark-obsidian at the tokenizer level: not in code, fences, URLs, math, `(#x)`, or `#123`.
+  A tag needs a space or line start before `#`. Nested tags (`#a/b`) also count toward the parent on the tag index.
+- Search (Ctrl/Cmd+K) indexes titles, body text and tags; not aliases, descriptions or the formatted bibliography.
+- Mermaid is rendered client-side from cdnjs (needs network in the reader's browser); KaTeX is rendered at build time.
+
+Upstream issues worked around:
+- tag-page plugin renders a tag page's listing twice; CSS hides the duplicate and TagIndex replaces the index body.
+- Mermaid receives the translucent `--highlight` as an opaque edge-label colour; CSS overrides it.
+- BibTeX parser: no `@` inside `@comment`, no bare `%` lines, and `{{Braces and Ampersands}}` for publishers containing "and".
+
+`content/about/authoring.md` is the working example of every convention.

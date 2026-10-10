@@ -92,6 +92,10 @@ h1.article-title {
   color: var(--gray);
   margin: 0;
 }
+.page-meta > span + span::before {
+  content: "·";
+  margin: 0 0.5em;
+}
 
 ul.tags {
   font-family: var(--uiFont);
@@ -182,6 +186,19 @@ article a.internal {
   text-underline-offset: 0.18em;
   &:hover {
     text-decoration-color: currentColor;
+  }
+}
+// Inline #tags in prose: keep the hash visible, no underline or pill.
+article a.internal.tag-link {
+  text-decoration: none;
+  background: none;
+  padding: 0;
+  border-radius: 0;
+  font-family: var(--uiFont);
+  font-size: 0.9em;
+  &::before {
+    content: "#";
+    opacity: 0.6;
   }
 }
 article h2 a[role="anchor"],
@@ -326,7 +343,8 @@ body[data-slug^="concepts/"] h1.article-title {
 // ---------- Homepage ----------
 
 body[data-slug="index"] {
-  .toc {
+  .toc,
+  .page-meta {
     display: none;
   }
   h1.article-title {
@@ -387,4 +405,114 @@ body[data-slug="index"] {
 
 .page-listing {
   font-family: var(--uiFont);
+}
+
+// Tag pages. The stock tag-page plugin re-renders a tag page's own listing inside its body
+// (upstream bug), so each list appeared twice. On /tags/ the stock body is replaced by the
+// TagIndex component; on a single tag page only the duplicated copy is hidden.
+body[data-slug="tags/index"] .center > .popover-hint {
+  display: none;
+}
+body[data-slug^="tags/"] .center > .popover-hint > article:has(.page-listing) {
+  display: none;
+}
+
+.tag-index {
+  font-family: var(--uiFont);
+  margin-top: 1.5rem;
+  & .tag-index-summary {
+    color: var(--gray);
+    font-size: 0.85rem;
+    margin: 0 0 1.2rem 0;
+  }
+  & ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  & li {
+    display: grid;
+    grid-template-columns: auto auto 1fr;
+    align-items: baseline;
+    column-gap: 0.7rem;
+    padding: 0.45rem 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  & a.tag-link {
+    background: none;
+    padding: 0;
+    font-size: 1.05rem;
+    font-weight: 600;
+    &::before {
+      content: "#";
+      opacity: 0.5;
+    }
+  }
+  & .tag-index-count {
+    font-size: 0.8rem;
+    color: var(--gray);
+    font-variant-numeric: tabular-nums;
+  }
+  & .tag-index-pages {
+    font-size: 0.85rem;
+    color: var(--darkgray);
+    opacity: 0.8;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    @media all and ($mobile) {
+      grid-column: 1 / -1;
+      white-space: normal;
+    }
+  }
+}
+
+// ---------- Citations ----------
+
+// Bibliography generated from bibliography.bib, kept visibly separate from footnotes.
+#refs.references {
+  margin-top: 3rem;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  &::before {
+    content: "References";
+    display: block;
+    font-family: var(--uiFont);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gray);
+    border-top: 1px solid var(--gray);
+    width: 4rem;
+    padding-top: 1.2rem;
+    margin-bottom: 0.6rem;
+    white-space: nowrap;
+  }
+  & .csl-entry {
+    padding-left: 1.5em;
+    text-indent: -1.5em;
+    margin-bottom: 0.4rem;
+  }
+}
+article a[href^="#bib-"] {
+  text-decoration: none;
+}
+
+// ---------- Diagrams and math ----------
+
+// Mermaid receives --highlight (translucent) and renders it opaque; use the page colour instead.
+.mermaid .edgeLabel,
+.mermaid .edgeLabel p,
+.mermaid .edgeLabel rect,
+.mermaid .labelBkg {
+  background-color: var(--light) !important;
+  fill: var(--light) !important;
+}
+
+// Long display equations scroll sideways on narrow screens instead of overflowing.
+.katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.2rem 0;
 }
