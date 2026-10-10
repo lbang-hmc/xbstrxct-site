@@ -62,3 +62,32 @@ Transformations applied to `content/`:
 
 Unpublished research notes (outside `content/`, never built): `research/todo.md` and two scanned PDFs
 from Jamison, *Signs for Computing Terminology*. The PDFs are git-ignored to avoid accidental publication.
+
+## Phase 2: visual design
+
+All customisation lives in four places:
+
+- `quartz.config.yaml`: fonts (`title`/`body` Source Serif 4, `header` Source Sans 3 for UI, `code` Source Code Pro),
+  paper/charcoal palette with ink-blue links for light and dark mode, and plugin placement: table of contents on the right
+  (only when a page has headings), graph below backlinks, tag-list on (tags shown under the date), the properties table hidden,
+  reader mode off, breadcrumbs reduced to a section line (`showCurrentPage: false`).
+- `quartz/styles/custom.scss`: the design layer (reading column ~40rem, type scale, quiet underlined links, quotations,
+  footnotes, sidebars, per-folder page types, homepage).
+- `quartz/components/abstraction/SiteNav.tsx`: the Essays · Concepts · Tags row above each page.
+- `quartz.ts`: registers the date condition and the nav. **Quartz quirk:** v5.0.0 ignores the `layout` exported from
+  `quartz.ts` (docs say otherwise) and renders with a PageTypeDispatcher built inside `loadQuartzConfig()`. `quartz.ts` swaps that
+  dispatcher for one built from our layout and throws a clear error if a future Quartz version renames it.
+
+Page types follow folders: `content/essays/` (book-like, larger opening paragraph) and `content/concepts/` (compact).
+`content/essays/index.md` and `content/concepts/index.md` only supply folder titles.
+
+Fixes for issues the author reported:
+- Footnote markers widened line spacing: `sup` now has `line-height: 0` and is raised with relative positioning.
+- Multi-line titles in the explorer, TOC and backlinks were ambiguous: entries now have a hanging indent and a gap between items.
+
+Also fixed: the explorer calls `scrollIntoView()` on the current page, which scrolled the window and hid the title on first load
+(upstream behaviour). A CSS `scroll-margin-top` on the active entry keeps the page at the top.
+
+Homepage restructuring (text unchanged): title `abstraction.wiki`; the "What is this site?" paragraph is now the opening
+paragraph (heading removed); the dictionary entry has an `## Abstraction` heading (formerly the page's H1); a Concepts list and a
+tags link were added.

@@ -1,6 +1,5 @@
 ---
 title: Characteristica universalis
-type: concept
 tags:
   - placeholder
 ---

@@ -1,6 +1,5 @@
 ---
 title: Concretization
-type: concept
 tags:
   - placeholder
 ---

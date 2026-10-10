@@ -1,6 +1,5 @@
 ---
 title: Ready-to-hand
-type: concept
 tags:
   - placeholder
 ---

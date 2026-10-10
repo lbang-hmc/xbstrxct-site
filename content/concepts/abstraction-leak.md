@@ -1,6 +1,5 @@
 ---
 title: Abstraction leak
-type: concept
 tags:
   - placeholder
 ---

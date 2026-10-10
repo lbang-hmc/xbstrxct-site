@@ -1,3 +1,411 @@
 @use "./base.scss";
+@use "./variables.scss" as *;
 
-// put your custom CSS here!
+// abstraction.wiki design layer. Colours and the serif/mono fonts are set in quartz.config.yaml;
+// everything here only refines Quartz's base styles, so upstream updates stay mergeable.
+
+// Fonts (quartz.config.yaml): body = Source Serif 4 (text and article headings),
+// header = Source Sans 3 (navigation, metadata, Quartz UI), code = Source Code Pro.
+:root {
+  --uiFont: var(--headerFont), system-ui, sans-serif;
+  --serif: var(--bodyFont);
+  --measure: 40rem; // reading column width (about 70 characters)
+  --rule: var(--lightgray);
+}
+
+// ---------- Page frame ----------
+
+.page > #quartz-body {
+  .center {
+    width: 100%;
+    max-width: var(--measure);
+    margin: 0 auto;
+    padding-top: 3.5rem;
+    @media all and ($mobile) {
+      padding-top: 1rem;
+    }
+  }
+
+  .sidebar {
+    font-family: var(--uiFont);
+    padding-top: 3.5rem;
+  }
+}
+
+// ---------- Site title, header nav, footer ----------
+
+.page-title {
+  font-family: var(--titleFont);
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  & a {
+    color: var(--dark);
+  }
+}
+
+.site-nav {
+  display: flex;
+  gap: 1.4rem;
+  font-family: var(--uiFont);
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding-bottom: 0.6rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--rule);
+  & a {
+    color: var(--gray);
+    font-weight: 600;
+    &:hover,
+    &[aria-current] {
+      color: var(--secondary);
+    }
+  }
+}
+
+footer {
+  font-family: var(--uiFont);
+  font-size: 0.8rem;
+  color: var(--gray);
+  opacity: 1;
+}
+
+// ---------- Article header: section kicker, title, date, tags ----------
+
+.breadcrumb-container {
+  font-family: var(--uiFont);
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin: 0 0 0.6rem 0;
+  gap: 0.1rem;
+  & a {
+    font-weight: 600;
+    color: var(--gray);
+    &:hover {
+      color: var(--secondary);
+    }
+  }
+  & p {
+    color: var(--gray);
+  }
+}
+
+h1.article-title {
+  font-family: var(--serif);
+  font-size: 2.35rem;
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  color: var(--dark);
+  margin: 0 0 0.75rem 0;
+  @media all and ($mobile) {
+    font-size: 1.85rem;
+  }
+}
+
+.content-meta {
+  font-family: var(--uiFont);
+  font-size: 0.85rem;
+  color: var(--gray);
+  margin: 0;
+}
+
+ul.tags {
+  font-family: var(--uiFont);
+  margin: 0.35rem 0 0 0;
+  & a.internal.tag-link {
+    font-size: 0.78rem;
+    font-weight: 400;
+    background: none;
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    padding: 0.05rem 0.55rem;
+    color: var(--darkgray);
+    &:hover {
+      color: var(--secondary);
+      border-color: var(--secondary);
+    }
+  }
+}
+
+.page-header {
+  margin-bottom: 0;
+}
+.center > article {
+  margin-top: 1.9rem;
+}
+
+// ---------- Body text ----------
+
+article {
+  font-size: 1.125rem;
+  line-height: 1.65;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  text-rendering: optimizeLegibility;
+  font-variant-numeric: oldstyle-nums proportional-nums;
+
+  & p,
+  & li {
+    line-height: 1.65;
+  }
+  & p {
+    margin: 0 0 1.1em 0;
+  }
+
+  & h2,
+  & h3,
+  & h4 {
+    font-family: var(--serif);
+    color: var(--dark);
+    font-weight: 600;
+    line-height: 1.25;
+    hyphens: manual;
+  }
+  & h2 {
+    font-size: 1.45rem;
+    margin: 2.4rem 0 0.8rem;
+  }
+  & h3 {
+    font-size: 1.18rem;
+    margin: 2rem 0 0.6rem;
+  }
+
+  & hr {
+    width: 4rem;
+    margin: 2.5rem auto;
+    border: none;
+    border-top: 1px solid var(--gray);
+  }
+
+  & code {
+    font-size: 0.86em;
+  }
+}
+
+// Links: quiet underline instead of Quartz's highlighted pill.
+a {
+  font-weight: 400;
+}
+article a,
+article a.internal {
+  background: none;
+  padding: 0;
+  border-radius: 0;
+  line-height: inherit;
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--secondary) 35%, transparent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+  &:hover {
+    text-decoration-color: currentColor;
+  }
+}
+article h2 a[role="anchor"],
+article h3 a[role="anchor"] {
+  text-decoration: none;
+}
+
+// Footnote markers must not open up the line spacing (sup normally enlarges the line box).
+sup,
+sub {
+  line-height: 0;
+  font-size: 0.7em;
+  font-family: var(--uiFont);
+  font-variant-numeric: lining-nums;
+}
+sup {
+  vertical-align: baseline;
+  position: relative;
+  top: -0.5em;
+}
+article a[data-footnote-ref] {
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0 0.1em;
+}
+
+// Quotations: indented, slightly smaller, a hairline rather than a thick bar.
+article blockquote {
+  margin: 1.6rem 0 1.6rem 0.2rem;
+  padding: 0.1rem 0 0.1rem 1.4rem;
+  border-left: 2px solid var(--lightgray);
+  color: var(--darkgray);
+  font-size: 1.05rem;
+  & p {
+    margin: 0.4em 0;
+  }
+}
+
+// Footnotes: smaller, set off by a short rule, with a quiet label.
+section[data-footnotes],
+.footnotes {
+  margin-top: 3rem;
+  border-top: none;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  &::before {
+    content: "";
+    display: block;
+    width: 4rem;
+    border-top: 1px solid var(--gray);
+    margin-bottom: 1.2rem;
+  }
+  & h2 {
+    font-family: var(--uiFont);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gray);
+    margin: 0 0 0.6rem 0;
+  }
+  & ol {
+    padding-left: 1.3rem;
+  }
+  & li,
+  & li p {
+    line-height: 1.5;
+    margin: 0 0 0.35rem 0;
+  }
+  & a[data-footnote-backref] {
+    background: none;
+    text-decoration: none;
+  }
+}
+
+// ---------- Sidebars: explorer, table of contents, backlinks, graph ----------
+
+// Long titles wrap with a hanging indent and items get clear separation,
+// so a two-line title never reads as two separate entries.
+.explorer-content ul li,
+.backlinks ul li,
+.toc ul li {
+  margin: 0 0 0.55rem 0;
+  line-height: 1.3;
+}
+.explorer-content ul li > a,
+.backlinks ul li > a,
+.toc ul li > a {
+  display: block;
+  padding-left: 0.85em;
+  text-indent: -0.85em;
+  line-height: 1.3;
+}
+.explorer-content ul li > a {
+  font-size: 0.92rem;
+}
+// The explorer calls scrollIntoView() on the current page's entry, which also scrolls the
+// window and hides the article title on first load. A large scroll margin clamps that to the top.
+.explorer-content ul li > a.active {
+  scroll-margin-top: 100vh;
+}
+.explorer-content .folder-outer > ul {
+  padding-top: 0.35rem;
+}
+.folder-container div > button span,
+.folder-container div > a {
+  font-family: var(--uiFont);
+}
+
+.explorer .title-button h2,
+.backlinks > h3,
+.toc .toc-header h3,
+.graph > h3 {
+  font-family: var(--uiFont);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gray);
+}
+
+.backlinks ul li > a,
+.toc ul li > a {
+  font-size: 0.9rem;
+}
+
+// ---------- Page types (by folder) ----------
+
+// Essays: a slightly larger, more book-like first paragraph.
+body[data-slug^="essays/"]:not([data-slug="essays/index"]) article > p:first-of-type {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  @media all and ($mobile) {
+    font-size: 1.125rem;
+  }
+}
+
+// Concepts: compact reference pages.
+body[data-slug^="concepts/"] h1.article-title {
+  font-size: 2rem;
+}
+
+// ---------- Homepage ----------
+
+body[data-slug="index"] {
+  .breadcrumb-container,
+  .toc {
+    display: none;
+  }
+  h1.article-title {
+    font-size: 2.8rem;
+    letter-spacing: -0.02em;
+    @media all and ($mobile) {
+      font-size: 2.2rem;
+    }
+  }
+  // the opening paragraph is the site's introduction
+  article > p:first-child {
+    font-size: 1.3rem;
+    line-height: 1.55;
+    color: var(--dark);
+  }
+  // the dictionary entry, set like one
+  article > h2#abstraction + p {
+    font-family: var(--uiFont);
+    font-size: 0.9rem;
+    color: var(--gray);
+    margin-bottom: 0.4rem;
+  }
+  article > h2#abstraction + p + ol {
+    margin-top: 0;
+    & li::marker {
+      font-family: var(--uiFont);
+      color: var(--gray);
+    }
+  }
+  article > h2 {
+    font-family: var(--uiFont);
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gray);
+    border-top: 1px solid var(--rule);
+    padding-top: 1.2rem;
+    margin-top: 2.6rem;
+  }
+  article > ul {
+    list-style: none;
+    padding-left: 0;
+    & li {
+      margin: 0 0 0.5rem 0;
+    }
+    & a {
+      text-decoration: none;
+      color: var(--dark);
+      font-size: 1.15rem;
+      &:hover {
+        color: var(--secondary);
+      }
+    }
+  }
+}
+
+// ---------- Folder and tag listings ----------
+
+.page-listing {
+  font-family: var(--uiFont);
+}

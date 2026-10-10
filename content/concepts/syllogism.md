@@ -1,6 +1,5 @@
 ---
 title: Syllogism
-type: concept
 tags:
   - placeholder
 ---

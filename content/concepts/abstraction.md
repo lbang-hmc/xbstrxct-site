@@ -1,6 +1,5 @@
 ---
 title: Abstraction
-type: concept
 tags:
   - placeholder
 ---
