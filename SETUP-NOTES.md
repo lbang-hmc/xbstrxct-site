@@ -134,3 +134,4 @@ Upstream issues worked around:
 - **Drafts:** `draft: true` keeps a page out of every build. `./serve --drafts` previews drafts locally (labelled
   "Draft"). `content/about/` (the authoring example) is a draft. Note: the live preview does not delete stale output
   files; restart `./serve` after drafting a previously published page.
+- The live preview does not watch `bibliography.bib` (it is outside `content/`): restart `./serve` after editing it.
