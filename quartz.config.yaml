@@ -160,7 +160,7 @@ plugins:
     layout:
       position: beforeBody
       priority: 20
-      condition: not-index
+      condition: has-published-date
   - source: github:quartz-community/tag-list
     enabled: false
     layout:

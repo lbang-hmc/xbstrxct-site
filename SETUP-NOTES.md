@@ -11,6 +11,9 @@ Local prototype only. Nothing has been deployed or pushed; the git repo has no `
 
 ## Commands
 
+`./serve` does all of the following on first run and then starts the live preview at
+http://localhost:8080 (extra args go to `quartz build`, e.g. `./serve --port 8081`). Manual equivalent:
+
 ```sh
 export NVM_DIR="$HOME/.nvm"; . "$NVM_DIR/nvm.sh"; nvm use   # once per shell
 npm ci                       # install dependencies
@@ -30,8 +33,11 @@ How this was created: `git checkout v5.0.0 -- .`, `npm ci`,
 - `defaultDateType: published`: in this version the frontmatter key `date` is read as both
   `created` and `published` (note-properties plugin), while `modified` falls back to git/filesystem
   time. Showing `published` displays the authored dates rather than the import date.
-- `content-meta` gets `condition: not-index`: a page with no date is given *today's* date by the
-  created-modified-date plugin, so the homepage's date line is hidden instead. Phase 3 handles dates in general.
+- `content-meta` gets `condition: has-published-date`, a custom layout condition registered in
+  `quartz.ts` via Quartz's `registerCondition()` API. The created-modified-date plugin fills a missing date
+  with the build time, so the date line is shown only when the frontmatter has `published`/`publishDate`/`date`.
+  **Known gap (Phase 3):** folder and tag listings (e.g. `/concepts/`, `/tags/placeholder`) still show the
+  build time for undated pages.
 
 ## Content provenance
 
@@ -48,7 +54,10 @@ Transformations applied to `content/`:
 1. `content/essays/*.md`: removed the body `# H1` that duplicated the frontmatter `title` (Quartz renders the
    title itself). Everything else is byte-identical. Note: heidegger's H1 was "Heidegger and software", and its title is "Heidegger and Software".
 2. `content/index.md`: the original H1 `# Abstraction` became `title: Abstraction`; the snapshot's
-   "What is this site?" section is inserted before "Thoughts"; list links `(slug)` became `(essays/slug)`.
+   "What is this site?" section is inserted before "Thoughts", with "XBSTRXCT" replaced by "abstraction.wiki"
+   (at the author's request); list links `(slug)` became `(essays/slug)`.
+4. `content/concepts/*.md`: six placeholder pages created at the author's request (no prose, no dates),
+   tagged `placeholder`, `type: concept`; each links only to the essays where the term actually occurs.
 3. Essay-to-essay links such as `[…](simondon)` are unchanged; they resolve via `markdownLinkResolution: shortest`.
 
 Unpublished research notes (outside `content/`, never built): `research/todo.md` and two scanned PDFs

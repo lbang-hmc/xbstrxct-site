@@ -10,7 +10,7 @@ Origin: from Latin *abstractio*, from the verb *abstrahere* ('draw away')
 
 ## What is this site? 
 
-XBSTRXCT is a growing collection of micro-essays (and occassional full-sized essays) related to the concept of abstraction. The posts tend to blend programming, computation, mathematics, and philosophy.   
+abstraction.wiki is a growing collection of micro-essays (and occassional full-sized essays) related to the concept of abstraction. The posts tend to blend programming, computation, mathematics, and philosophy.   
 
 --- 
 
