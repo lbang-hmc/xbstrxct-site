@@ -34,8 +34,9 @@ config.plugins.transformers.push(NormalizeTags())
 // Section links in the `header` slot (plugins cannot be placed there from YAML).
 const header = [
   SiteNav([
-    { label: "Essays", path: "essays/" },
+    { label: "Blurbs", path: "blurbs/" },
     { label: "Concepts", path: "concepts/" },
+    { label: "Readings", path: "readings/" },
     { label: "Tags", path: "tags/" },
   ]),
 ]

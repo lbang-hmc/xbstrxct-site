@@ -14,7 +14,7 @@ This page is an executable style sheet: everything below is rendered from plain 
 
 ## Links
 
-Wiki links resolve by file name anywhere in `content/`: [[abstraction]], [[heidegger]], and [[ready-to-hand]]. Display text goes after a bar: [[abstraction-leak|leaky abstractions]]. A page can also be reached through one of its `aliases`, as in [[Leaky abstraction]]. Ordinary Markdown links work too: [the Simondon essay](../essays/simondon.md). Every page lists the pages that link to it under *Backlinks*.
+Wiki links resolve by file name anywhere in `content/`: [[abstraction]], [[heidegger]], and [[ready-to-hand]]. Display text goes after a bar: [[abstraction-leak|leaky abstractions]]. A page can also be reached through one of its `aliases`, as in [[Leaky abstraction]]. Ordinary Markdown links work too: [the Simondon essay](../blurbs/simondon.md). Every page lists the pages that link to it under *Backlinks*.
 
 ## Tags
 

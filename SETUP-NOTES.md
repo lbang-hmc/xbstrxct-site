@@ -69,13 +69,17 @@ All customisation lives in four places:
   reader mode off, breadcrumbs off (redundant with the nav row). Links are oxblood (`#7d2a1e`; `#d88f7b` in dark mode).
 - `quartz/styles/custom.scss`: the design layer (reading column ~40rem, type scale, quiet underlined links, quotations,
   footnotes, sidebars, per-folder page types, homepage).
-- `quartz/components/abstraction/SiteNav.tsx`: the Essays · Concepts · Tags row above each page.
+- `quartz/components/abstraction/SiteNav.tsx`: the Blurbs · Concepts · Readings · Tags row above each page.
 - `quartz.ts`: registers the date condition and the nav. **Quartz quirk:** v5.0.0 ignores the `layout` exported from
   `quartz.ts` (docs say otherwise) and renders with a PageTypeDispatcher built inside `loadQuartzConfig()`. `quartz.ts` swaps that
   dispatcher for one built from our layout and throws a clear error if a future Quartz version renames it.
 
-Page types follow folders: `content/essays/` (book-like, larger opening paragraph) and `content/concepts/` (compact).
-`content/essays/index.md` and `content/concepts/index.md` only supply folder titles.
+Page types follow folders: `content/blurbs/` (book-like, larger opening paragraph) and `content/concepts/` (compact).
+`content/blurbs/index.md` and `content/concepts/index.md` only supply folder titles.
+`content/readings/` (close readings of single papers; added 2026-10-12, so far only a placeholder `index.md`) uses the default
+page style until the first reading exists, and has its own entry in the nav row.
+2026-10-12: the Essays section was renamed **Blurbs** (folder `content/essays/` → `content/blurbs/`, so URLs moved from
+`/essays/…` to `/blurbs/…`). Older notes in this file that say "essays" mean these pages.
 
 Fixes for issues the author reported:
 - Footnote markers widened line spacing: `sup` now has `line-height: 0` and is raised with relative positioning.

@@ -14,12 +14,12 @@ Origin: from Latin *abstractio*, from the verb *abstrahere* ('draw away')
 
 ## Thoughts
 
-- [Locke, Abstraction, SICP, and the Programmer’s Toolbox](essays/abstraction-lock-sicp)
-- [Early Mechanical Reasoning and the Dream of Universal Calculation](essays/lull-leibniz)
-- [Meaningless Symbols in Twentieth Century Symbolic Reasoning](essays/symbolic-reasoning-math-logic-cs)
-- [Formal Methods in Ancient Greece](essays/formal-methods-ancient-greece)
-- [What Might Simondon Think About Software And Programming?](essays/simondon)
-- [Heidegger and software](essays/heidegger)
+- [Locke, Abstraction, SICP, and the Programmer’s Toolbox](blurbs/abstraction-lock-sicp)
+- [Early Mechanical Reasoning and the Dream of Universal Calculation](blurbs/lull-leibniz)
+- [Meaningless Symbols in Twentieth Century Symbolic Reasoning](blurbs/symbolic-reasoning-math-logic-cs)
+- [Formal Methods in Ancient Greece](blurbs/formal-methods-ancient-greece)
+- [What Might Simondon Think About Software And Programming?](blurbs/simondon)
+- [Heidegger and software](blurbs/heidegger)
 
 ## Concepts
 
