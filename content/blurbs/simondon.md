@@ -3,6 +3,8 @@ title: What Might Simondon Think About Software And Programming?
 date: 2025-02-01
 ---
 
+In the early 1900s, starting a car took skill and a little courage. The driver set the choke and adjusted the spark timing by hand, walked around to the front of the car, and heaved on a crank; if the engine fired at the wrong moment, the crank could kick back hard enough to break a wrist. In 1912 Cadillac introduced Charles Kettering's electric starter, and the crank gave way to a switch, and later to a key turned in the ignition. Today many cars start with a single button that hides a whole sequence of events: the car confirms that the key fob is inside, exchanges a coded handshake with it to unlock the immobiliser, checks that your foot is on the brake, primes the fuel pump, and only then turns the engine over. At every step the driver has needed to know less about engines, and more people have been able to drive.
+
 ## Simondon on opacity and ubiquity of technology
 
 Gilbert Simondon observed [-@simondon2017mode] that technologies tend to become more socially integrated as they grow *less* internally intelligible to their users. As devices evolve, their functions fold into self-regulating, interdependent systems that no longer require interpretive knowledge to operate. This process, that Simondon calls *[[concretization]]*, produces machines that work reliably and autonomously while concealing their inner logic. Opacity, rather than hindering adoption, is what allows technologies to become ubiquitous; they turn ordinary once they stop being complicated objects of inquiry and start working quietly in the background. Heidegger [proposed similar interpretations](heidegger) of technology use.

@@ -139,3 +139,18 @@ Upstream issues worked around:
   "Draft"). `content/about/` (the authoring example) is a draft. Note: the live preview does not delete stale output
   files; restart `./serve` after drafting a previously published page.
 - The live preview does not watch `bibliography.bib` (it is outside `content/`): restart `./serve` after editing it.
+
+## 2026-10-12: blurb openings and corrections (author-approved, drafted one at a time)
+
+- Opening narratives (author-approved text) placed before the first heading of: Heidegger (frozen word processor),
+  Simondon (car starters), Llull–Leibniz (risk scores and loan scoring, citing O'Neil 2016), Ancient Greece (penguin).
+  Locke/SICP and Meaningless Symbols have none for now.
+- Heidegger: "(see Monkey body schema paper)" replaced by a new paragraph on Iriki et al. 1996 and Umiltà et al. 2008.
+  "See moravec" is still in the text, awaiting the author.
+- Llull–Leibniz, fact corrections at the author's request: the calculator is the *stepped reckoner* (the *calculus
+  ratiocinator* is the logical calculus, now mentioned beside the *characteristica universalis*); "In 1666 he wrote"
+  became "In a later manuscript he wrote", citing Russell 1900, p. 170 (the English is Russell's translation of
+  Gerhardt VII 200; the manuscript's date is disputed, so none is given). Headings added: Llull's Wheels, Let Us
+  Calculate, Leibniz's Dream at Scale.
+- Bibliography: added russell1900critical, oneil2016weapons, iriki1996coding, umilta2008pliers.
+- The larger first paragraph on blurbs was removed; all paragraphs now share one size.

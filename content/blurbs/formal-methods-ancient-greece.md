@@ -3,6 +3,8 @@ title: Formal Methods in Ancient Greece
 date: 2025-02-15
 ---
 
+A child learning about animals works it out for themselves: all birds fly; a robin is a bird; so robins fly. The rule holds for sparrows, crows, and pigeons, and soon the child can apply it to birds they have never seen. Then, on a trip to the zoo, they meet a penguin. Nothing was wrong with the reasoning; its form was flawless. The trouble was that the rule never looked at what "bird" meant, or at the actual birds it was supposed to describe. It cared only about the shape of the argument.
+
 ## From the Concrete to the Abstract  
 
 By the 4th century BCE, humans, remarkable pattern recognizers that we are, were already leaping from a handful of concrete, living examples to abstract forms that could cover infinitely many cases. Aristotle (384–322 BCE) popularized this move with his codification of [[syllogism|syllogisms]] [@aristotle350prior]. Consider a few examples of how reasoning shifts from the particular to the general:  

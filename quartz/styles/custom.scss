@@ -333,15 +333,6 @@ section[data-footnotes],
 
 // ---------- Page types (by folder) ----------
 
-// Blurbs: a slightly larger, more book-like first paragraph.
-body[data-slug^="blurbs/"]:not([data-slug="blurbs/index"]) article > p:first-of-type {
-  font-size: 1.2rem;
-  line-height: 1.6;
-  @media all and ($mobile) {
-    font-size: 1.125rem;
-  }
-}
-
 // Concepts: compact reference pages.
 body[data-slug^="concepts/"] h1.article-title {
   font-size: 2rem;
