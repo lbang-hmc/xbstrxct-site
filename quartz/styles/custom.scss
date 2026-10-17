@@ -373,6 +373,13 @@ body[data-slug="index"] {
     line-height: 1.55;
     color: var(--dark);
   }
+  // the note that follows it (a word of caution), set small and grey
+  article > p:first-child + p {
+    font-family: var(--uiFont);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--gray);
+  }
   // the dictionary entry, set like one
   article > h2#abstraction + p {
     font-family: var(--uiFont);
