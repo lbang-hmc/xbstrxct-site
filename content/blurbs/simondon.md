@@ -1,5 +1,5 @@
 ---
-title: What Might Simondon Think About Software And Programming?
+title: Thinking About Software, Programming, and AI with Simondon
 date: 2025-02-01
 ---
 

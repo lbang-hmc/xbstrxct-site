@@ -19,4 +19,4 @@ See moravec
 
 ### Related
 
-- [What might Simondon think about Software and Programming?](simondon)
+- [Thinking About Software, Programming, and AI with Simondon](simondon)

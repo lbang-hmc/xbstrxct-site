@@ -1,11 +1,11 @@
 ---
 title: Concretization
 tags:
-  - placeholder
+  - draft-text
 ---
 
-*Placeholder concept page, not yet written.*
+For Gilbert Simondon, concretization is the process by which a technical object's parts come to depend on and support one another, until the machine becomes a coherent, self-regulating whole. Concretized machines are more reliable and easier to use, and harder to understand from the outside. Computer scientists would call the analogous process *abstraction*, and use "concretization" for its opposite.
 
 ## Discussed in
 
-- [[simondon|What Might Simondon Think About Software And Programming?]]
+- [[simondon|Thinking About Software, Programming, and AI with Simondon]]

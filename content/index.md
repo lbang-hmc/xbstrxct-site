@@ -18,7 +18,7 @@ Origin: from Latin *abstractio*, from the verb *abstrahere* ('draw away')
 - [Early Mechanical Reasoning and the Dream of Universal Calculation](blurbs/lull-leibniz)
 - [Meaningless Symbols in Twentieth Century Symbolic Reasoning](blurbs/symbolic-reasoning-math-logic-cs)
 - [Formal Methods in Ancient Greece](blurbs/formal-methods-ancient-greece)
-- [What Might Simondon Think About Software And Programming?](blurbs/simondon)
+- [Thinking About Software, Programming, and AI with Simondon](blurbs/simondon)
 - [Heidegger and software](blurbs/heidegger)
 
 ## Concepts

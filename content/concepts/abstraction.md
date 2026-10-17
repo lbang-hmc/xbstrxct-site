@@ -1,10 +1,10 @@
 ---
 title: Abstraction
 tags:
-  - placeholder
+  - draft-text
 ---
 
-*Placeholder concept page, not yet written.*
+Abstraction is the act of keeping some distinctions and deliberately dropping others, so that many particular things can be handled as one general thing. Locke called it separating ideas "from all other ideas that accompany them in their real existence"; programmers do the same when they write a function, an interface, or a type. Every abstraction is therefore also a decision about what to forget.
 
 ## Discussed in
 
@@ -13,5 +13,5 @@ tags:
 - [[formal-methods-ancient-greece|Formal Methods in Ancient Greece]]
 - [[lull-leibniz|Early Mechanical Reasoning and the Dream of Universal Calculation]]
 - [[symbolic-reasoning-math-logic-cs|Meaningless Symbols in Twentieth Century Symbolic Reasoning]]
-- [[simondon|What Might Simondon Think About Software And Programming?]]
+- [[simondon|Thinking About Software, Programming, and AI with Simondon]]
 - [[heidegger|Heidegger and Software]]
