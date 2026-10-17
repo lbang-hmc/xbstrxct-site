@@ -161,7 +161,7 @@ Custom code (all registered in `quartz.ts`):
 | `quartz/plugins/abstraction/normalizeTags.ts` | Tags are case-insensitive (`#Topology` = `topology`). |
 | `quartz/components/abstraction/TagIndex.tsx` | Compact `/tags/` page: tag, count, page titles; nested tags under parents. |
 
-Configuration: `citations` enabled (`bibliography.bib`, `csl: chicago` author-date, linked citations);
+Configuration: `citations` enabled (`bibliography.bib`, Chicago author-date via `chicago-author-date.csl`, a copy of the bundled style without the "———" repeated-author substitute; linked citations);
 `crawl-links` `prettyLinks: false` (it shortened any link text containing "/", e.g. nested tags).
 
 Verified behaviour of Quartz v5 itself:

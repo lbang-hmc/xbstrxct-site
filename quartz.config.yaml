@@ -94,7 +94,7 @@ plugins:
     enabled: true
     options:
       bibliographyFile: ./bibliography.bib
-      csl: chicago
+      csl: ./chicago-author-date.csl
       linkCitations: true
     order: 85
   - source: github:quartz-community/hard-line-breaks
