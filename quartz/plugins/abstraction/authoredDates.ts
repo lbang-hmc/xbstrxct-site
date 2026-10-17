@@ -1,6 +1,6 @@
 import { QuartzTransformerPlugin } from "../types"
 
-// abstraction.wiki: dates come only from frontmatter, never from the build clock or the filesystem.
+// XBSTRXCT: dates come only from frontmatter, never from the build clock or the filesystem.
 //
 //   published: when the page was published   (legacy alias: `date`)
 //   modified:  last substantive revision      (aliases: `updated`, `lastmod`)

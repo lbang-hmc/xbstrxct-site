@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Live preview of abstraction.wiki at http://localhost:8080 (Ctrl+C to stop).
+# Live preview of XBSTRXCT at http://localhost:8080 (Ctrl+C to stop).
 # `./serve --drafts` also shows pages marked `draft: true` (never part of the published site).
 # Other arguments are passed to `quartz build`, e.g. `./serve --port 8081`.
 set -euo pipefail

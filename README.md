@@ -1,17 +1,12 @@
-# Quartz v5
+# XBSTRXCT
 
-> “[One] who works with the door open gets all kinds of interruptions, but [they] also occasionally gets clues as to what the world is and what might be important.” — Richard Hamming
+Source of [xbstrxct.com](https://xbstrxct.com): micro-essays (and occasional full-sized essays) on abstraction,
+blending programming, computation, mathematics and philosophy. Built with [Quartz](https://quartz.jzhao.xyz/) v5.
 
-Quartz is a set of tools that helps you publish your [digital garden](https://jzhao.xyz/posts/networked-thought) and notes as a website for free.
+- `content/`: the writing (Markdown). `blurbs/`, `concepts/`, `readings/`; `about/authoring.md` shows every convention (draft, not published).
+- `bibliography.bib`: shared bibliography for `[@key]` citations.
+- `./serve`: live preview at http://localhost:8080 (`./serve --drafts` includes drafts).
+- `./test`: checks for links, tags, dates and build warnings.
+- `./publish`: builds the site into `docs/`, which GitHub Pages serves. Commit and push to publish.
 
-🔗 Read the documentation and get started: https://quartz.jzhao.xyz/
-
-[Join the Discord Community](https://discord.gg/cRFFHYye7t)
-
-## Sponsors
-
-<p align="center">
-  <a href="https://github.com/sponsors/jackyzha0">
-    <img src="https://cdn.jsdelivr.net/gh/jackyzha0/jackyzha0/sponsorkit/sponsors.svg" />
-  </a>
-</p>
+Notes on setup, design and customisations: `NOTES.md`. Open items: `TODO.md`.

@@ -8,8 +8,9 @@ import { NormalizeTags } from "./quartz/plugins/abstraction/normalizeTags"
 import SiteNav from "./quartz/components/abstraction/SiteNav"
 import PageMeta from "./quartz/components/abstraction/PageMeta"
 import TagIndex from "./quartz/components/abstraction/TagIndex"
+import SiteFooter from "./quartz/components/abstraction/SiteFooter"
 
-// abstraction.wiki customisations. Everything site-specific that is not plain configuration
+// XBSTRXCT customisations. Everything site-specific that is not plain configuration
 // lives here or in quartz/components/abstraction, quartz/plugins/abstraction, quartz/styles/custom.scss.
 
 const config = await loadQuartzConfig()
@@ -41,6 +42,9 @@ const header = [
   ]),
 ]
 
+// Footer from the original xbstrxct.com (year, RSS, contact), replacing Quartz's "Created with" footer.
+const footer = SiteFooter({ name: "XBSTRXCT", user: "xbstrxct", domain: "proton.me" })
+
 // Date and reading-time line, placed directly after the article title.
 const pageMeta = PageMeta()
 function withPageMeta(beforeBody: QuartzComponent[] = []): QuartzComponent[] {
@@ -52,20 +56,22 @@ function withPageMeta(beforeBody: QuartzComponent[] = []): QuartzComponent[] {
 const base = await loadQuartzLayout()
 const contentOverrides: Partial<FullPageLayout> = {
   header,
+  footer,
   beforeBody: withPageMeta(base.byPageType.content?.beforeBody ?? base.defaults.beforeBody),
 }
 // Compact tag index on /tags/ (renders nothing on individual tag pages).
 const tagOverrides: Partial<FullPageLayout> = {
   header,
+  footer,
   beforeBody: [...(base.byPageType.tag?.beforeBody ?? base.defaults.beforeBody ?? []), TagIndex()],
 }
 
 export const layout = await loadQuartzLayout({
-  defaults: { header },
+  defaults: { header, footer },
   byPageType: {
     content: contentOverrides,
     tag: tagOverrides,
-    ...Object.fromEntries(["folder", "canvas", "bases"].map((t) => [t, { header }])),
+    ...Object.fromEntries(["folder", "canvas", "bases"].map((t) => [t, { header, footer }])),
   },
 })
 

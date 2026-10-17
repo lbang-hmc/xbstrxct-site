@@ -2,7 +2,7 @@ import { visit } from "unist-util-visit"
 import { Element, Root, Text } from "hast"
 import { QuartzTransformerPlugin } from "../types"
 
-// abstraction.wiki: tags are case-insensitive. Frontmatter `tags:` and inline #tags are
+// XBSTRXCT: tags are case-insensitive. Frontmatter `tags:` and inline #tags are
 // lowercased and de-duplicated, so #Topology, #topology and `tags: [Topology]` are one tag.
 // Runs after Quartz has collected both kinds of tags (frontmatter + inline).
 

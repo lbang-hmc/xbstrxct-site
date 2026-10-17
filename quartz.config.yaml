@@ -1,12 +1,12 @@
 # yaml-language-server: $schema=./quartz/plugins/quartz-plugins.schema.json
 configuration:
-  pageTitle: abstraction.wiki
+  pageTitle: XBSTRXCT
   pageTitleSuffix: ""
   enableSPA: true
   enablePopovers: true
   analytics: null
   locale: en-US
-  baseUrl: abstraction.wiki
+  baseUrl: xbstrxct.com
   ignorePatterns:
     - private
     - templates

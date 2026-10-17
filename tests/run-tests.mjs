@@ -1,4 +1,4 @@
-// abstraction.wiki checks. Run with ./test (or: node tests/run-tests.mjs).
+// XBSTRXCT checks. Run with ./test (or: node tests/run-tests.mjs).
 //
 // 1. Builds tests/fixture/ and checks inline #tags, link resolution and dates in the output.
 // 2. Builds the real site (content/) and fails on broken internal links or unexpected warnings.
@@ -16,7 +16,7 @@ const check = (name, ok, detail = "") => {
 }
 
 function build(contentDir) {
-  const out = fs.mkdtempSync(path.join(os.tmpdir(), "abstraction-wiki-test-"))
+  const out = fs.mkdtempSync(path.join(os.tmpdir(), "xbstrxct-test-"))
   const r = spawnSync("npx", ["quartz", "build", "-d", contentDir, "-o", out], {
     cwd: root,
     encoding: "utf8",

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Run abstraction.wiki checks: inline tags, links, dates, broken links, build warnings.
+# Run XBSTRXCT checks: inline tags, links, dates, broken links, build warnings.
 set -euo pipefail
 cd "$(dirname "$0")"
 export NVM_DIR="${NVM_DIR:-$HOME/.nvm}"

@@ -1,8 +1,8 @@
 ---
-title: abstraction.wiki
+title: XBSTRXCT
 ---
 
-abstraction.wiki is a growing collection of micro-essays (and occassional full-sized essays) related to the concept of abstraction. The posts tend to blend programming, computation, mathematics, and philosophy.   
+XBSTRXCT is a growing collection of micro-essays (and occassional full-sized essays) related to the concept of abstraction. The posts tend to blend programming, computation, mathematics, and philosophy.   
 
 ## Abstraction
 

@@ -1,7 +1,7 @@
 @use "./base.scss";
 @use "./variables.scss" as *;
 
-// abstraction.wiki design layer. Colours and the serif/mono fonts are set in quartz.config.yaml;
+// XBSTRXCT design layer. Colours and the serif/mono fonts are set in quartz.config.yaml;
 // everything here only refines Quartz's base styles, so upstream updates stay mergeable.
 
 // Fonts (quartz.config.yaml): body = Literata (text and article headings),

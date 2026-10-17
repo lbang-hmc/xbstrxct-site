@@ -6,7 +6,7 @@ import { Element, Root } from "hast"
 import { QuartzTransformerPlugin } from "../types"
 import { FilePath, FullSlug, resolveRelative, simplifySlug, slugifyFilePath } from "../../util/path"
 
-// abstraction.wiki: friendlier internal links.
+// XBSTRXCT: friendlier internal links.
 //
 // Quartz resolves [[target]] only when `target` matches a file name exactly (case-sensitive).
 // This step runs after Quartz's link crawler and re-resolves any internal link that points at a
