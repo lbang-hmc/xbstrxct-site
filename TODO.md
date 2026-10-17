@@ -36,7 +36,7 @@ The longest list contained all the others, so nothing was dropped and each item 
 - Blackwell, "Metaphors We Program By" (programs as social actors): own post later; text saved in `research/blackwell-draft.md`
 - Complete the bibliography entries marked `keywords = {incomplete}`: locke1689essay, aristotle350prior,
   heidegger1927being, llull1501ars, gardner1958logic, leibniz1666dissertatio, leibniz1981new,
-  hilbert1900mathematische, hilbert1902mathematical, whitehead1927principia, dijkstra2002ewd1300,
+  whitehead1927principia, dijkstra2002ewd1300,
   borenstein1991programming
 - Reference links point to a different edition for llull1501ars (1517 Lyon), whitehead1927principia (1910 vol. 1)
   and leibniz1981new (1996 revision); find the cited editions or update the entries
