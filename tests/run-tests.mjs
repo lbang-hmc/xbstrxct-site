@@ -1,6 +1,6 @@
 // XBSTRXCT checks. Run with ./test (or: node tests/run-tests.mjs).
 //
-// 1. Builds tests/fixture/ and checks inline #tags, link resolution and dates in the output.
+// 1. Builds tests/fixture/ and checks inline #tags, link resolution, dates and reference links in the output.
 // 2. Builds the real site (content/) and fails on broken internal links or unexpected warnings.
 
 import { spawnSync } from "node:child_process"
@@ -84,6 +84,19 @@ console.log("\nDates")
   const year = String(new Date().getFullYear())
   check("folder listing shows no invented (build-time) dates", !new RegExp(`<time[^>]*>[^<]*${year}`).test(listing) || year === "2025")
   check("folder listing orders by published date, newest first", listing.indexOf("links-and-dates") < listing.indexOf("legacy-date"))
+}
+
+console.log("\nReferences")
+{
+  const html = read(fx.out, "notes/references.html")
+  const entry = (key) => (html.match(new RegExp(`<div class="csl-entry" id="bib-${key}">(.*?)</div>`)) ?? [])[1] ?? ""
+  const book = entry("locke1689essay")
+  const article = entry("shannon1948mathematical")
+  const doi = entry("iriki1996coding")
+  check("book title links to its URL", /<a href="https:\/\/www\.gutenberg\.org\/[^"]+"[^>]*><i>An Essay/.test(book), book)
+  check("article title (in quotes) links to its URL", /“<a href="https:\/\/[^"]+"[^>]*>A Mathematical Theory of Communication<\/a>\.”/.test(article), article)
+  check("DOI becomes a doi.org link on the title", /“<a href="https:\/\/doi\.org\/[^"]+"[^>]*>Coding of Modified Body Schema/.test(doi), doi)
+  check("no URL is printed in reference entries", ![book, article, doi].some((e) => /https?:/.test(text(e))))
 }
 
 // ---------- real site ----------

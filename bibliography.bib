@@ -5,6 +5,12 @@
   (e.g. Zotero + Better BibTeX, "Keep updated"). Seed entries: works already cited in the essays.
   Parser limits: no at-signs inside comments, and no bare percent-sign comment lines.
   A publisher containing "and" needs double braces, e.g. {{Williams and Norgate}}.
+  Links: each entry has one url or doi, shown as a link on the title (quartz/plugins/abstraction/linkReferences.ts).
+  Prefer a free full text (Gutenberg, Wikisource, archive.org, author or publisher), then a DOI, then Google Books.
+  Publisher DOIs replaced by free copies: shannon1948mathematical 10.1002/j.1538-7305.1948.tb01338.x,
+  turing1936computable 10.1112/plms/s2-42.1.230.
+  Linked edition differs from the cited one: llull1501ars (1517 Lyon edition), whitehead1927principia
+  (first edition, vol. 1, 1910), leibniz1981new (1996 revised edition).
 }
 
 @article{shannon1948mathematical,
@@ -15,7 +21,7 @@
   volume  = {27},
   number  = {3},
   pages   = {379--423},
-  doi     = {10.1002/j.1538-7305.1948.tb01338.x}
+  url     = {https://people.math.harvard.edu/~ctm/home/text/others/shannon/entropy/entropy.pdf}
 }
 
 @article{turing1936computable,
@@ -26,7 +32,7 @@
   volume  = {s2-42},
   number  = {1},
   pages   = {230--265},
-  doi     = {10.1112/plms/s2-42.1.230}
+  url     = {https://www.cs.virginia.edu/~robins/Turing_Paper_1936.pdf}
 }
 
 @book{abelson1996structure,
@@ -35,7 +41,8 @@
   edition   = {2},
   publisher = {MIT Press},
   address   = {Cambridge, MA},
-  year      = {1996}
+  year      = {1996},
+  url       = {https://mitp-content-server.mit.edu/books/content/sectbyfn/books_pres_0/6515/sicp.zip/index.html}
 }
 
 @book{winograd1987understanding,
@@ -43,7 +50,8 @@
   title     = {Understanding Computers and Cognition: A New Foundation for Design},
   publisher = {Addison-Wesley},
   address   = {Reading, MA},
-  year      = {1987}
+  year      = {1987},
+  url       = {https://books.google.com/books?id=6TwbGGSz6NYC}
 }
 
 @book{whitehead1911introduction,
@@ -51,7 +59,8 @@
   title     = {An Introduction to Mathematics},
   publisher = {{Williams and Norgate}},
   address   = {London},
-  year      = {1911}
+  year      = {1911},
+  url       = {https://www.gutenberg.org/ebooks/41568}
 }
 
 @book{russell1900critical,
@@ -59,7 +68,8 @@
   title     = {A Critical Exposition of the Philosophy of Leibniz},
   publisher = {Cambridge University Press},
   address   = {Cambridge},
-  year      = {1900}
+  year      = {1900},
+  url       = {https://archive.org/details/cu31924052172271}
 }
 
 @book{oneil2016weapons,
@@ -67,7 +77,8 @@
   title     = {Weapons of Math Destruction: How Big Data Increases Inequality and Threatens Democracy},
   publisher = {Crown},
   address   = {New York},
-  year      = {2016}
+  year      = {2016},
+  url       = {https://books.google.com/books?id=NgEwCwAAQBAJ}
 }
 
 @article{iriki1996coding,
@@ -102,70 +113,80 @@
   author   = {Locke, John},
   title    = {An Essay Concerning Human Understanding},
   year     = {1689},
-  keywords = {incomplete}
+  keywords = {incomplete},
+  url      = {https://www.gutenberg.org/ebooks/10615}
 }
 
 @book{aristotle350prior,
   author   = {Aristotle},
   title    = {Prior Analytics},
   year     = {350 BCE},
-  keywords = {incomplete}
+  keywords = {incomplete},
+  url      = {http://classics.mit.edu/Aristotle/prior.html}
 }
 
 @book{heidegger1927being,
   author   = {Heidegger, Martin},
   title    = {Being and Time},
   year     = {1927},
-  keywords = {incomplete}
+  keywords = {incomplete},
+  url      = {https://books.google.com/books?id=0351VlMDqGEC}
 }
 
 @book{llull1501ars,
   author   = {Llull, Raymond},
   title    = {Ars magna},
   year     = {1501},
-  keywords = {incomplete}
+  keywords = {incomplete},
+  url      = {https://archive.org/details/illuminatisacrep00llul}
 }
 
 @book{gardner1958logic,
   author   = {Gardner, Martin},
   title    = {Logic Machines and Diagrams},
   year     = {1958},
-  keywords = {incomplete}
+  keywords = {incomplete},
+  url      = {https://archive.org/details/logicmachinesdia00gard_0}
 }
 
 @book{leibniz1666dissertatio,
   author   = {Leibniz, Gottfried Wilhelm},
   title    = {Dissertatio de Arte Combinatoria},
   year     = {1666},
-  keywords = {incomplete}
+  keywords = {incomplete},
+  url      = {https://archive.org/details/ita-bnc-mag-00000844-001}
 }
 
 @book{leibniz1981new,
   author   = {Leibniz, Gottfried Wilhelm},
   title    = {New Essays on Human Understanding},
   year     = {1981},
-  keywords = {incomplete}
+  keywords = {incomplete},
+  url      = {https://books.google.com/books?id=vD6nSUSbL7IC}
 }
 
 @book{simondon2017mode,
   author    = {Simondon, Gilbert},
   title     = {On the Mode of Existence of Technical Objects},
   publisher = {University of Minnesota Press},
-  year      = {2017}
+  year      = {2017},
+  url       = {https://books.google.com/books?id=wdytjgEACAAJ}
 }
 
 @article{hilbert1900mathematische,
   author   = {Hilbert, David},
   title    = {Mathematische Probleme},
   year     = {1900},
-  keywords = {incomplete}
+  keywords = {incomplete},
+  url      = {https://de.wikisource.org/wiki/Mathematische_Probleme}
 }
 
 @article{hilbert1902mathematical,
   author   = {Hilbert, David},
   title    = {Mathematical Problems},
   year     = {1902},
-  keywords = {incomplete}
+  keywords = {incomplete},
+  doi      = {10.1090/S0002-9904-1902-00923-3}
 }
 
 @book{smullyan1992godel,
@@ -175,7 +196,8 @@
   number    = {19},
   publisher = {Oxford University Press},
   address   = {New York},
-  year      = {1992}
+  year      = {1992},
+  url       = {https://books.google.com/books?id=04zalcCdKZsC}
 }
 
 @article{church1936unsolvable,
@@ -193,7 +215,8 @@
   author   = {Whitehead, Alfred North and Russell, Bertrand},
   title    = {Principia Mathematica},
   year     = {1927},
-  keywords = {incomplete}
+  keywords = {incomplete},
+  url      = {https://archive.org/details/dli.ernet.247278}
 }
 
 @book{krug2013dont,
@@ -202,21 +225,24 @@
   edition   = {3},
   publisher = {New Riders},
   address   = {Berkeley, CA},
-  year      = {2013}
+  year      = {2013},
+  url       = {https://books.google.com/books?id=QlduAgAAQBAJ}
 }
 
 @misc{dijkstra2002ewd1300,
   author   = {Dijkstra, Edsger W.},
   title    = {{EWD1300}},
   year     = {2002},
-  keywords = {incomplete}
+  keywords = {incomplete},
+  url      = {https://www.cs.utexas.edu/~EWD/transcriptions/EWD13xx/EWD1300.html}
 }
 
 @book{borenstein1991programming,
   author   = {Borenstein, Nathaniel S.},
   title    = {Programming as if People Mattered},
   year     = {1991},
-  keywords = {incomplete}
+  keywords = {incomplete},
+  url      = {https://books.google.com/books?id=ae5pJAAACAAJ}
 }
 
 @comment{
@@ -230,7 +256,8 @@
   publisher = {Stanford University Press},
   address   = {Stanford, CA},
   year      = {2000},
-  isbn      = {9780804736831}
+  isbn      = {9780804736831},
+  url       = {https://books.google.com/books?id=0VoFtAEACAAJ}
 }
 
 @book{peirce1931collected,
@@ -240,7 +267,8 @@
   publisher = {Harvard University Press},
   address   = {Cambridge, MA},
   year      = {1931},
-  volume    = {1--6}
+  volume    = {1--6},
+  url       = {https://archive.org/details/collected-papers-of-charles-sanders-peirce-volumes-i-and-ii-principles-of-philos}
 }
 
 @book{saussure1983course,
@@ -250,7 +278,8 @@
   publisher = {Duckworth},
   address   = {London},
   year      = {1983},
-  note      = {Originally published in 1916}
+  note      = {Originally published in 1916},
+  url        = {https://books.google.com/books?id=IPhkAAAAMAAJ}
 }
 
 @book{tanakaishii2010semiotics,
@@ -259,7 +288,8 @@
   publisher = {Cambridge University Press},
   address   = {Cambridge, UK},
   year      = {2010},
-  isbn      = {9780521736275}
+  isbn      = {9780521736275},
+  url       = {https://books.google.com/books?id=irizHa1MXJoC}
 }
 
 @inproceedings{blackwell2006metaphors,

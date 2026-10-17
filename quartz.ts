@@ -5,6 +5,7 @@ import { QuartzComponent } from "./quartz/components/types"
 import { AuthoredDates } from "./quartz/plugins/abstraction/authoredDates"
 import { ResolveLinks } from "./quartz/plugins/abstraction/resolveLinks"
 import { NormalizeTags } from "./quartz/plugins/abstraction/normalizeTags"
+import { LinkReferences } from "./quartz/plugins/abstraction/linkReferences"
 import SiteNav from "./quartz/components/abstraction/SiteNav"
 import PageMeta from "./quartz/components/abstraction/PageMeta"
 import TagIndex from "./quartz/components/abstraction/TagIndex"
@@ -33,6 +34,10 @@ config.plugins.transformers.push(ResolveLinks())
 
 // Tags are case-insensitive: #Topology and `tags: [topology]` are the same tag.
 config.plugins.transformers.push(NormalizeTags())
+
+// Reference-list entries link to the work through their title; the printed URL is removed.
+// Runs after the citations plugin, which is configured in quartz.config.yaml.
+config.plugins.transformers.push(LinkReferences())
 
 // Section links in the `header` slot (plugins cannot be placed there from YAML).
 const header = [

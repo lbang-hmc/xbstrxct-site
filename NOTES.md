@@ -29,6 +29,14 @@ This repo began as the local Quartz prototype "abstraction.wiki" (state before t
   cached Literata and Source Sans fonts (`quartz/.quartz-cache/fonts/`). The Quartz originals are not kept.
 - Every page has a one-line `description:` (used for link previews and search).
 
+## References link to the works (2026-10-17)
+
+Every `bibliography.bib` entry has exactly one `url` or `doi`. Prefer a free full text (Gutenberg, Wikisource,
+archive.org, an author's or publisher's free copy), then a DOI, then Google Books (`books.google.com/books?id=…`).
+`quartz/plugins/abstraction/linkReferences.ts` removes the URL the citation style prints and makes the title the link
+instead (the quoted title of an article, otherwise the italic title of a book); `./test` checks this. The `.bib`
+header comment lists replaced DOIs and links whose edition differs from the one cited.
+
 ## Publishing
 
 GitHub Pages serves `docs/` on branch `main` (built HTML is committed; no CI).

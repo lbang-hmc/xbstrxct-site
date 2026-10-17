@@ -38,6 +38,8 @@ The longest list contained all the others, so nothing was dropped and each item 
   heidegger1927being, llull1501ars, gardner1958logic, leibniz1666dissertatio, leibniz1981new,
   hilbert1900mathematische, hilbert1902mathematical, whitehead1927principia, dijkstra2002ewd1300,
   borenstein1991programming
+- Reference links point to a different edition for llull1501ars (1517 Lyon), whitehead1927principia (1910 vol. 1)
+  and leibniz1981new (1996 revision); find the cited editions or update the entries
 - Review `../archive/NOT-IN-SITE.md` for older material worth bringing back (old dates, Contact/About text)
 
 ## Site features (from the original abstraction.wiki plan, never built)
