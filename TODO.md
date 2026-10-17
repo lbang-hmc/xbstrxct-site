@@ -33,6 +33,7 @@ The longest list contained all the others, so nothing was dropped and each item 
 - Readings section: write the first reading, then remove `draft: true` from `content/readings/index.md`
   and restore the nav link in `quartz.ts`
 - More blurbs from the Overleaf material: see `research/overleaf-sources.md`
+- Blackwell, "Metaphors We Program By" (programs as social actors): own post later; text saved in `research/blackwell-draft.md`
 - Complete the bibliography entries marked `keywords = {incomplete}`: locke1689essay, aristotle350prior,
   heidegger1927being, llull1501ars, gardner1958logic, leibniz1666dissertatio, leibniz1981new,
   hilbert1900mathematische, hilbert1902mathematical, whitehead1927principia, dijkstra2002ewd1300,

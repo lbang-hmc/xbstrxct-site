@@ -5,8 +5,6 @@ description: "A growing collection of micro-essays on abstraction, blending prog
 
 XBSTRXCT is a growing collection of micro-essays (and occasional full-sized essays) related to the concept of abstraction. The posts tend to blend programming, computation, mathematics, and philosophy.   
 
-New here? One way through: [[formal-methods-ancient-greece|Formal Methods in Ancient Greece]], [[llull-leibniz|Llull and Leibniz]], [[symbolic-reasoning-math-logic-cs|Meaningless Symbols]], [[locke-sicp|Locke and SICP]], [[heidegger|Heidegger]], [[simondon|Simondon]], then [[rotman-person-subject-agent|Rotman]].
-
 ## Abstraction
 
 From Latin *abstractio*, from the verb *abstrahere*, "to draw away".
