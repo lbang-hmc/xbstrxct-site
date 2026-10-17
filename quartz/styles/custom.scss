@@ -110,9 +110,18 @@ h1.article-title {
   margin: 0 0.5em;
 }
 
+// Tags: one wrapping row, under the page title (quartz.ts) and under each title in listings.
 ul.tags {
   font-family: var(--uiFont);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.4rem;
+  list-style: none;
+  padding: 0;
   margin: 0.35rem 0 0 0;
+  & > li {
+    margin: 0;
+  }
   & a.internal.tag-link {
     font-size: 0.78rem;
     font-weight: 400;
@@ -467,6 +476,48 @@ dialog.post-image-overlay {
 
 .page-listing {
   font-family: var(--uiFont);
+}
+// Listing rows: date | title, with the tags as a wrapping row under the title (not a third column).
+li.section-li > .section {
+  grid-template-columns: fit-content(8em) 1fr;
+  & > .desc > h3 {
+    margin: 0;
+  }
+  & > ul.tags {
+    grid-column: 2;
+    justify-self: start;
+    margin-top: 0.3rem;
+    @media all and (max-width: 600px) {
+      display: flex;
+    }
+  }
+}
+
+// ---------- Bibliography page (BibliographyIndex.tsx) ----------
+
+body[data-slug="bibliography"] article #refs {
+  display: none;
+}
+.bibliography-index {
+  & .bibliography-summary {
+    font-family: var(--uiFont);
+    font-size: 0.85rem;
+    color: var(--gray);
+    margin: 0 0 1.2rem 0;
+  }
+  & .bibliography-entry {
+    padding: 0.7rem 0;
+    border-bottom: 1px solid var(--rule);
+    padding-left: 1.5rem;
+    text-indent: -1.5rem;
+  }
+  & .cited-in {
+    text-indent: 0;
+    font-family: var(--uiFont);
+    font-size: 0.8rem;
+    color: var(--gray);
+    margin: 0.3rem 0 0 0;
+  }
 }
 
 // Tag pages. The stock tag-page plugin re-renders a tag page's own listing inside its body

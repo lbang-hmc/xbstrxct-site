@@ -45,8 +45,8 @@ export default (() => {
         <h2 id="concepts">Concepts</h2>
         {list(concepts)}
         <p>
-          Browse <a href={resolveRelative(here, "tags/index" as FullSlug)}>all tags</a> or search the
-          site.
+          Browse <a href={resolveRelative(here, "tags/index" as FullSlug)}>all tags</a>, the{" "}
+          <a href={resolveRelative(here, "bibliography" as FullSlug)}>bibliography</a>, or search the site.
         </p>
       </div>
     )

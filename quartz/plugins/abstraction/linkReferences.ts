@@ -7,6 +7,7 @@ import { QuartzTransformerPlugin } from "../types"
 // e.g. `Locke, John. 1689. <i>An Essay…</i>. https://…`. This removes that text and turns the title
 // into the link: the “quoted” title of an article or chapter, otherwise the first <i> (a book).
 // Entries without a URL are left alone. Must run after the citations plugin (see quartz.ts).
+// Also records the keys in each page's reference list as `citedKeys`, for the bibliography page.
 
 const URL_RE = /\s*(https?:\/\/[^\s<]+?)\.?(?=\s*$)/
 
@@ -60,14 +61,24 @@ export const LinkReferences: QuartzTransformerPlugin = () => ({
   name: "LinkReferences",
   htmlPlugins() {
     return [
-      () => (tree: Root) => {
+      () => (tree: Root, file) => {
+        const keys: string[] = []
         visit(tree, "element", (node: Element) => {
           const classes = (node.properties.className ?? []) as string[]
           if (!classes.includes("csl-entry")) return
+          const id = String(node.properties.id ?? "")
+          if (id.startsWith("bib-")) keys.push(id.slice(4))
           const href = takeUrl(node)
           if (href) linkTitle(node, href)
         })
+        file.data.citedKeys = keys
       },
     ]
   },
 })
+
+declare module "vfile" {
+  interface DataMap {
+    citedKeys: string[]
+  }
+}

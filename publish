@@ -20,7 +20,8 @@ fi
 unset ABSTRACTION_DRAFTS
 log=$(mktemp)
 npx quartz build -o docs 2>&1 | tee "$log"
-if grep -qiE 'warn|error' "$log"; then
+# (Ignored: "isn't yet tracked by git" for new pages; dates come from frontmatter, not git.)
+if grep -iE 'warn|error' "$log" | grep -vq "isn't yet tracked by git"; then
   rm -f "$log"
   echo "Build reported warnings or errors (above); fix them before publishing." >&2
   exit 1
