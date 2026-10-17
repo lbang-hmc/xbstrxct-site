@@ -28,6 +28,11 @@ git add -A && git commit -m "..." && git push
 `/posts/<slug>.html` (redirect pages to `/blurbs/<slug>`). It refuses to finish if `docs/CNAME` is not `xbstrxct.com`
 or a draft page was emitted. Do not edit `docs/` by hand; it is replaced on every build.
 
+GitHub Pages gotchas (seen 2026-10-17 when switching from `/` to `/docs`): changing the source folder cleared the custom
+domain and did not trigger a rebuild, so Pages kept serving README.md rendered by Jekyll. Fix: set the domain again
+(`gh api -X PUT repos/lbang-hmc/xbstrxct-site/pages -f cname=xbstrxct.com -f 'source[branch]=main' -f 'source[path]=/docs'`)
+and request a build (`gh api -X POST repos/lbang-hmc/xbstrxct-site/pages/builds`). The CDN caches pages for 10 minutes.
+
 ---
 
 # abstraction.wiki — Phase 1 setup notes (historical)
