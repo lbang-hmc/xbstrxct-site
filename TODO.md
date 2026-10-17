@@ -27,7 +27,7 @@ The longest list contained all the others, so nothing was dropped and each item 
 
 ## Site content
 
-- Opening narratives for Locke/SICP and Meaningless Symbols: drafts in `research/opening-drafts.md`, awaiting approval
+- Opening narratives for Locke/SICP and Meaningless Symbols (to write myself)
 - Review the drafted concept-page text (abstraction, abstraction leak, characteristica universalis,
   concretization, ready-to-hand, syllogism)
 - Readings section: write the first reading, then remove `draft: true` from `content/readings/index.md`

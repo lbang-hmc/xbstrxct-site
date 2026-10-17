@@ -4,7 +4,7 @@ Written 2026-10-17. Not published.
 
 **Status (2026-10-17, round 3; start-here line later removed by request):** the tags below are applied, and every improvement is done, except:
 - the About page (skipped by choice: the author and the name stay mysterious)
-- opening stories, drafted in `opening-drafts.md` but not yet inserted
+- opening stories (drafts rejected; the author will write them)
 - the equivalence-class demo (deferred)
 - SVG figures (skipped; no image work beyond the three lead images)
 - the Overleaf link (covered by `overleaf-sources.md`)
