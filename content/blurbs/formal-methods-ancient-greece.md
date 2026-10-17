@@ -1,6 +1,8 @@
 ---
 title: Formal Methods in Ancient Greece
 date: 2025-02-15
+description: "Aristotle's syllogisms turned concrete arguments into abstract forms, and made a virtue of forgetting what the symbols stand for."
+tags: [history, logic, formalism]
 ---
 
 A child learning about animals works it out for themselves: all birds fly; a robin is a bird; so robins fly. The rule holds for sparrows, crows, and pigeons, and soon the child can apply it to birds they have never seen. Then, on a trip to the zoo, they meet a penguin. Nothing was wrong with the reasoning; its form was flawless. The trouble was that the rule never looked at what "bird" meant, or at the actual birds it was supposed to describe. It cared only about the shape of the argument.

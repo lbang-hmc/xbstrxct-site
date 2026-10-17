@@ -1,6 +1,14 @@
 # Suggestions
 
-Written 2026-10-17. Tags are suggestions only (not applied). Not published.
+Written 2026-10-17. Not published.
+
+**Status (2026-10-17, round 3):** the tags below are applied, and every improvement is done, except:
+- the About page (skipped by choice: the author and the name stay mysterious)
+- opening stories, drafted in `opening-drafts.md` but not yet inserted
+- the equivalence-class demo (deferred)
+- SVG figures (skipped; no image work beyond the three lead images)
+- the Overleaf link (covered by `overleaf-sources.md`)
+- Enforce HTTPS (done only when publishing)
 
 ## Suggested tags
 

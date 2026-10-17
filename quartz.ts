@@ -9,6 +9,8 @@ import SiteNav from "./quartz/components/abstraction/SiteNav"
 import PageMeta from "./quartz/components/abstraction/PageMeta"
 import TagIndex from "./quartz/components/abstraction/TagIndex"
 import SiteFooter from "./quartz/components/abstraction/SiteFooter"
+import PostImage from "./quartz/components/abstraction/PostImage"
+import HomeIndex from "./quartz/components/abstraction/HomeIndex"
 
 // XBSTRXCT customisations. Everything site-specific that is not plain configuration
 // lives here or in quartz/components/abstraction, quartz/plugins/abstraction, quartz/styles/custom.scss.
@@ -37,7 +39,7 @@ const header = [
   SiteNav([
     { label: "Blurbs", path: "blurbs/" },
     { label: "Concepts", path: "concepts/" },
-    { label: "Readings", path: "readings/" },
+    // { label: "Readings", path: "readings/" },  (restore when the first reading is published)
     { label: "Tags", path: "tags/" },
   ]),
 ]
@@ -45,12 +47,13 @@ const header = [
 // Footer from the original xbstrxct.com (year, RSS, contact), replacing Quartz's "Created with" footer.
 const footer = SiteFooter({ name: "XBSTRXCT", user: "xbstrxct", domain: "proton.me" })
 
-// Date and reading-time line, placed directly after the article title.
+// Date and reading-time line, then the lead image (frontmatter `image`), directly after the article title.
 const pageMeta = PageMeta()
+const postImage = PostImage()
 function withPageMeta(beforeBody: QuartzComponent[] = []): QuartzComponent[] {
   const titleIndex = beforeBody.findIndex((c) => c.displayName === "ArticleTitle" || c.name === "ArticleTitle")
   const at = titleIndex === -1 ? 0 : titleIndex + 1
-  return [...beforeBody.slice(0, at), pageMeta, ...beforeBody.slice(at)]
+  return [...beforeBody.slice(0, at), pageMeta, postImage, ...beforeBody.slice(at)]
 }
 
 const base = await loadQuartzLayout()
@@ -58,6 +61,8 @@ const contentOverrides: Partial<FullPageLayout> = {
   header,
   footer,
   beforeBody: withPageMeta(base.byPageType.content?.beforeBody ?? base.defaults.beforeBody),
+  // Generated blurb and concept lists on the homepage (renders nothing elsewhere).
+  afterBody: [HomeIndex(), ...(base.byPageType.content?.afterBody ?? base.defaults.afterBody ?? [])],
 }
 // Compact tag index on /tags/ (renders nothing on individual tag pages).
 const tagOverrides: Partial<FullPageLayout> = {

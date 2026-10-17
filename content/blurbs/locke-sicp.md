@@ -1,6 +1,12 @@
 ---
 title: Locke, Abstraction, and the Programmer’s Toolbox
 date: 2025-04-01
+description: "SICP opens with Locke's three acts of the mind (combining, relating, abstracting), which are also the programmer's basic tools."
+tags: [philosophy, programming, composition]
+aliases: [blurbs/abstraction-lock-sicp]
+image: images/sicp-cover.jpg
+imageAlt: "Cover of Structure and Interpretation of Computer Programs, second edition, with an engraving of a wizard holding an eval/apply globe facing a woman across a radiant lambda"
+imageCaption: "Cover of *Structure and Interpretation of Computer Programs* (MIT Press). [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:SICP_cover.jpg)."
 ---
 
 Chapter 1 of the widely adopted *Structure and Interpretation of Computer Programs* by Abelson, Sussman, and Sussman opens with a passage from John Locke’s 1689 *Essay Concerning Human Understanding* [@locke1689essay], highlighting three fundamental acts of the mind: **combining** ideas to form more complex ones, identifying **relations** between them, and **[[abstraction]]**, the act of separating ideas from their particular context to form general concepts:

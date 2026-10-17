@@ -1,33 +1,16 @@
 ---
 title: XBSTRXCT
+description: "A growing collection of micro-essays on abstraction, blending programming, computation, mathematics, and philosophy."
 ---
 
-XBSTRXCT is a growing collection of micro-essays (and occassional full-sized essays) related to the concept of abstraction. The posts tend to blend programming, computation, mathematics, and philosophy.   
+XBSTRXCT is a growing collection of micro-essays (and occasional full-sized essays) related to the concept of abstraction. The posts tend to blend programming, computation, mathematics, and philosophy.   
+
+New here? One way through: [[formal-methods-ancient-greece|Formal Methods in Ancient Greece]], [[llull-leibniz|Llull and Leibniz]], [[symbolic-reasoning-math-logic-cs|Meaningless Symbols]], [[locke-sicp|Locke and SICP]], [[heidegger|Heidegger]], [[simondon|Simondon]], then [[rotman-person-subject-agent|Rotman]].
 
 ## Abstraction
 
-Origin: from Latin *abstractio*, from the verb *abstrahere* ('draw away')
+From Latin *abstractio*, from the verb *abstrahere*, "to draw away".
 
-1. the quality of dealing with ideas
-2. freedom from representational qualities (especially in art).
-3. the process of considering something independently of its associations, attributes, or concrete accompaniments.
-
-## Thoughts
-
-- [Locke, Abstraction, SICP, and the Programmer’s Toolbox](blurbs/abstraction-lock-sicp)
-- [Early Mechanical Reasoning and the Dream of Universal Calculation](blurbs/lull-leibniz)
-- [Meaningless Symbols in Twentieth Century Symbolic Reasoning](blurbs/symbolic-reasoning-math-logic-cs)
-- [Formal Methods in Ancient Greece](blurbs/formal-methods-ancient-greece)
-- [Thinking About Software, Programming, and AI with Simondon](blurbs/simondon)
-- [Heidegger and software](blurbs/heidegger)
-
-## Concepts
-
-- [[concepts/abstraction|Abstraction]]
-- [[concepts/abstraction-leak|Abstraction leak]]
-- [[concepts/characteristica-universalis|Characteristica universalis]]
-- [[concepts/concretization|Concretization]]
-- [[concepts/ready-to-hand|Ready-to-hand]]
-- [[concepts/syllogism|Syllogism]]
-
-Browse [all tags](tags/) or search the site.
+1. thinking in terms of ideas rather than particular things.
+2. in art, freedom from depicting things as they appear.
+3. considering something apart from its circumstances, attributes, or concrete companions.

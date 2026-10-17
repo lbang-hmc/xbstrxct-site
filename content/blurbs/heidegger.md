@@ -1,6 +1,8 @@
 ---
 title: Heidegger and Software
 date: 2025-01-15
+description: "When software works we stop noticing it; when it breaks, Heidegger's ready-to-hand turns present-at-hand, and the abstraction leaks."
+tags: [philosophy, phenomenology, technology, embodiment, interfaces]
 ---
 
 You are writing a report that is due in an hour, and it is going well. You are in the flow, typing away, sentences arriving almost as fast as you can get them down, thinking only about what you want to say. Then the cursor stops. A small wheel begins to spin, the keys you press go nowhere, and a window announces that the application is not responding. Just like that, you are torn out of the flow and confronted with everything you had stopped noticing: the keyboard under your fingers, the glowing screen, the toolbar of tiny icons, the file system somewhere underneath. Did it save? When did it last save? Where does the file actually live, and what exactly is a "recovered document"? A minute ago you were writing; now you are wrestling with the machinery of writing.
@@ -12,11 +14,3 @@ Technological complexity tends to vanish when it works smoothly and resurface wh
 Neuroscience offers a striking parallel. Iriki, Tanaka, and Iwamura [-@iriki1996coding] trained macaque monkeys to retrieve food with a rake while recording from neurons that respond both to touch on the hand and to things seen near it. While the monkeys used the rake, the visual receptive fields of these neurons stretched out along the tool, as if the hand now ended at the rake's tip. Umiltà and colleagues [-@umilta2008pliers] trained monkeys to grasp with ordinary pliers and with "reverse" pliers, which close when the hand opens. Neurons that fire when a monkey grasps with its hand also fired when it grasped with either tool, and they kept time with the closing of the tool's jaws, even when that required the opposite movement of the fingers. In both cases the brain seems to absorb the tool into the body and to represent the goal of the action rather than the movement that achieves it, much as Heidegger's hammer disappears into hammering.
 
 Winograd and Flores later applied this same phenomenological insight to computing in *Understanding Computers and Cognition* [-@winograd1987understanding]. They noted that early computer interfaces often failed precisely because they disrupted this seamless absorption: crashes, bugs, and rigid command structures pulled users out of their task and made them confront the system’s internal logic. Programmers today describe the same effect as an *[[abstraction leak]]*: a moment when the polished surface of technology cracks and the buried complexity beneath becomes visible. Each glitch or failure is a small phenomenological fracture, a reminder that every smooth interface hides a dense machinery of dependencies waiting to announce itself.
-
-See moravec
-
---- 
-
-### Related
-
-- [Thinking About Software, Programming, and AI with Simondon](simondon)

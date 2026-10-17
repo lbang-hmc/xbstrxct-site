@@ -1,8 +1,12 @@
 #!/usr/bin/env bash
 # Build the published site into docs/, which GitHub Pages serves (lbang-hmc/xbstrxct-site, branch main, folder /docs).
-# Afterwards review `git status`, then commit and push to publish. Drafts are never included.
+# Drafts are never included, and any build warning (e.g. a broken link) stops the script.
+#   ./publish          build only; review `git status`, then commit and push yourself
+#   ./publish --push   build, then commit everything and push (asks first)
 set -euo pipefail
 cd "$(dirname "$0")"
+push=0
+[ "${1:-}" = "--push" ] && push=1
 
 # Node 22 via nvm (see .nvmrc); falls back to whatever `node` is on PATH.
 export NVM_DIR="${NVM_DIR:-$HOME/.nvm}"
@@ -14,25 +18,37 @@ fi
 [ -d .quartz/plugins ] || npx quartz plugin install
 
 unset ABSTRACTION_DRAFTS
-npx quartz build -o docs
+log=$(mktemp)
+npx quartz build -o docs 2>&1 | tee "$log"
+if grep -qiE 'warn|error' "$log"; then
+  rm -f "$log"
+  echo "Build reported warnings or errors (above); fix them before publishing." >&2
+  exit 1
+fi
+rm -f "$log"
 
 # Serve the files as they are (no Jekyll processing on GitHub Pages).
 touch docs/.nojekyll
 
 # Addresses from the original pandoc site: the RSS feed and /posts/<slug>.html.
 cp docs/index.xml docs/feed.xml
+# Pandoc-era names that differ from today's slugs (old=new).
+renamed="lull-leibniz=llull-leibniz abstraction-lock-sicp=locke-sicp"
 mkdir -p docs/posts
-for f in content/blurbs/*.md; do
-  slug=$(basename "$f" .md)
-  [ "$slug" = index ] && continue
-  cat > "docs/posts/$slug.html" <<EOF
+redirect() {  # redirect <old pandoc slug> <current blurb slug>
+  cat > "docs/posts/$1.html" <<EOF
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><title>Moved</title>
-<link rel="canonical" href="https://xbstrxct.com/blurbs/$slug">
-<meta http-equiv="refresh" content="0; url=../blurbs/$slug"></head>
-<body><p>Moved to <a href="../blurbs/$slug">../blurbs/$slug</a>.</p></body></html>
+<link rel="canonical" href="https://xbstrxct.com/blurbs/$2">
+<meta http-equiv="refresh" content="0; url=../blurbs/$2"></head>
+<body><p>Moved to <a href="../blurbs/$2">../blurbs/$2</a>.</p></body></html>
 EOF
+}
+for f in content/blurbs/*.md; do
+  slug=$(basename "$f" .md)
+  [ "$slug" = index ] || redirect "$slug" "$slug"
 done
+for pair in $renamed; do redirect "${pair%%=*}" "${pair#*=}"; done
 
 # Sanity checks before anything is committed.
 [ "$(cat docs/CNAME)" = "xbstrxct.com" ] || { echo "docs/CNAME is not xbstrxct.com" >&2; exit 1; }
@@ -43,5 +59,16 @@ done | grep .; then
   exit 1
 fi
 
-echo "Built docs/. Review, then: git add -A && git commit -m '...' && git push"
-git status --short docs | tail -n 5
+if [ "$push" = 0 ]; then
+  echo "Built docs/. Review, then: git add -A && git commit -m '...' && git push  (or run ./publish --push)"
+  git status --short | tail -n 10
+  exit 0
+fi
+
+git status --short
+read -r -p "Commit all of the above and push to xbstrxct.com? [y/N] " answer
+[ "$answer" = y ] || [ "$answer" = Y ] || { echo "Not pushed."; exit 0; }
+read -r -p "Commit message: " message
+git add -A
+git commit -m "${message:-Publish}"
+git push

@@ -1,6 +1,12 @@
 ---
 title: Early Mechanical Reasoning and the Dream of Universal Calculation
 date: 2025-03-15
+description: "From Llull's rotating wheels to Leibniz's \"Let us calculate\" to today's risk scores: the long dream of settling questions by calculation."
+tags: [history, logic, automation, ethics]
+aliases: [blurbs/lull-leibniz]
+image: images/llull-ars-magna-figure-a.png
+imageAlt: "Ramon Llull's Figure A, a circle of lettered divine attributes with every pair joined by a chord"
+imageCaption: "Ramon Llull's Figure A, from the *Ars magna*."
 ---
 
 Two people stand before a judge on similar charges. Before sentencing, each has answered a long questionnaire: prior convictions, but also when they first had contact with the police, whether friends or family have records, what kind of neighbourhood they grew up in. A statistical model turns the answers into a recidivism risk score, and that score can weigh on how long each of them spends in prison. Across town, a family applies for a mortgage online; within a minute, a scoring system has weighed data they will never see and declined them, with no loan officer to argue with. Cathy O'Neil calls systems like these "weapons of math destruction" [@oneil2016weapons]: opaque, operating at massive scale, and damaging to the people they score. Decisions that once rested on human judgment are now calculated.

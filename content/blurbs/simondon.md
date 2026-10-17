@@ -1,6 +1,11 @@
 ---
 title: Thinking About Software, Programming, and AI with Simondon
 date: 2025-02-01
+description: "Simondon's concretization explains why technologies, and software, spread as they become opaque, and why that collides with explainable AI."
+tags: [philosophy, technology, programming, ai, opacity]
+image: images/simondon-cadillac-1912.jpg
+imageAlt: "Newspaper advertisement for the 1912 Cadillac touring car, praising its electric power plant for self-starting, lighting and ignition"
+imageCaption: "\"Self-starting, lighting and ignition\": a Toronto dealer's Cadillac advertisement, 1912."
 ---
 
 In the early 1900s, starting a car took skill and a little courage. The driver set the choke and adjusted the spark timing by hand, walked around to the front of the car, and heaved on a crank; if the engine fired at the wrong moment, the crank could kick back hard enough to break a wrist. In 1912 Cadillac introduced Charles Kettering's electric starter, and the crank gave way to a switch, and later to a key turned in the ignition. Today many cars start with a single button that hides a whole sequence of events: the car confirms that the key fob is inside, exchanges a coded handshake with it to unlock the immobiliser, checks that your foot is on the brake, primes the fuel pump, and only then turns the engine over. At every step the driver has needed to know less about engines, and more people have been able to drive.
@@ -20,9 +25,3 @@ This dynamic sets up an obvious tension in the age of LLM-generated code, text, 
 ## An observation on terminology
 
 Interestingly, there seems to be a conflict of terminology. Simondon names *concretization* as the process whereby machines and other technologies become more opaque, and thereby more reliable, while increasing in simplicity of use. Meanwhile, most computer scientists would refer to the analogous process in programming as *abstraction*, while concretization is the *opposite* of abstraction. 
-
---- 
-
-### Related 
-
-- [Heidegger and software](heidegger)

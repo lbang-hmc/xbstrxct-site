@@ -1,7 +1,7 @@
 ---
 title: Authoring conventions
 draft: true
-description: A working example of every convention used on XBSTRXCT.
+description: "A working example of every convention used on XBSTRXCT."
 aliases:
   - Writing conventions
 created: 2026-10-09

@@ -1,6 +1,8 @@
 ---
 title: Meaningless Symbols in Twentieth Century Symbolic Reasoning
 date: 2025-03-01
+description: "Hilbert, Whitehead, Dijkstra and Shannon on the power of manipulating symbols without regard to their meaning, and what that ethos hides."
+tags: [history, logic, mathematics, formalism, notation, ethics]
 ---
 
 ## Hilbert, Gödel, and the Rise of Formalism  
